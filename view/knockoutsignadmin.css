@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    background: linear-gradient(to top, #d9d9d9, #1fa5e9);
+    background: linear-gradient(to top, #d9d9d9, #e91f1f);
 }
 
 div {
@@ -45,7 +45,7 @@ input[type=text], select {
 }
 
 input[type=text]:hover {
-    box-shadow: 7px 5px 1px #1fa5e9;
+    box-shadow: 7px 5px 1px #e91f1f;
 }
 
 .link {
@@ -67,7 +67,7 @@ div.link a:hover {
 
 input[type=submit] {
     width: 100%;
-    background-color: #1fa5e9;
+    background-color: #e91f1f;
     font-family: 'Bahnschrift';
     color: white;
     padding: 14px 20px;
@@ -79,7 +79,7 @@ input[type=submit] {
   }
   
   input[type=submit]:hover {
-    background-color: #178eca;
+    background-color: #ca1717;
     box-shadow: 7px 5px 1px #00000025;
   }
 
