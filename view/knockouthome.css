@@ -16,7 +16,7 @@ nav {
     flex-direction: row;
     background-color: #d9d9d9;
     align-items: center;
-    padding: 0px 300px;
+    padding: 0px auto;
 }
 
 a {
@@ -50,7 +50,7 @@ li {
     padding: 20px;
     font-size: large;
 }
-
+/*
 #buscar {
     float: right;
     overflow: hidden;
@@ -102,6 +102,13 @@ li {
  #buscar:hover #dropdown-content {
     display: block;
   }
+*/
+.navli {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
 
 .nava {
     transition: color 0.5s, font-size 0.5s, font-weight 0.5s;
@@ -311,7 +318,7 @@ footer {
 
 @media screen and (min-width: 767px) {
     body {
-        font-size: 14px;
+        font-size: 5px;
     }
  
     nav {
@@ -328,9 +335,7 @@ footer {
     body {
         display: flex;
         align-items: center;
-        justify-content: center;
         flex-wrap: wrap;
-        padding: 10px;
     }
 
     header {
@@ -341,11 +346,6 @@ footer {
         display: flex;
         flex-wrap: wrap;
     }
- 
-    .navaul {
-        flex-direction: column;
-        text-align: center;
-    }
 
     li {
         font-size: small;
@@ -354,10 +354,6 @@ footer {
     .nava:hover {
         color: red;
         font-size: 14px;
-    }
-
-    #buscar {
-        width: 80px;
     }
     #evento {
         display: block;
@@ -423,12 +419,12 @@ footer {
 }
  
 /* Pantallas muy grandes (mas de 1440px) */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1000px) {
     body {
         font-size: 18px;
     }
  
     nav {
-        padding: 0 auto;
+        padding: 0 310px;
     }
 }
