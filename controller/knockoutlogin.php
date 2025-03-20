@@ -17,8 +17,6 @@
         if(isset($_POST['submit'])) {
             $_SESSION['user'] = $user;
             $_SESSION['password'] = $password;
-
-            
         }
     }
 ?>
