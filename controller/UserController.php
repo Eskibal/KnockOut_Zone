@@ -5,44 +5,15 @@
         public $email;
 
         function login() {
+
+        }
+
+        function logout() {
+
+        }
+
+        function register() {
             
-        }
-
-        public function getEmail()
-        {
-                return $this->email;
-        }
-
-        public function setEmail($email)
-        {
-                $this->email = $email;
-
-                return $this;
-        }
-
-        public function getPassword()
-        {
-                return $this->password;
-        }
-
-        public function setPassword($password)
-        {
-                $this->password = $password;
-
-                return $this;
-        }
-        
-        public function getUser()
-        {
-                return $this->user;
-        }
-
-        
-        public function setUser($user)
-        {
-                $this->user = $user;
-
-                return $this;
         }
     }
 ?>
