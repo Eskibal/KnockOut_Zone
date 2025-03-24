@@ -16,7 +16,7 @@ nav {
     flex-direction: row;
     background-color: #d9d9d9;
     align-items: center;
-    padding: 0px auto;
+    padding: 0px 100%;
 }
 
 a {
@@ -317,21 +317,22 @@ footer {
 }
 
 /* Tablets (768px a 1024px) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1440px) {
     body {
         font-size: 14px;
     }
  
     nav {
-        padding: 0px 50px;
+        padding: 3.2px 2rem;
     }
  
     .titulo {
         margin-inline: auto;
-        font-size: 20px;
+        font-size: 1.25rem;
     }
     
     .topics {
+        display: grid;
         grid-template-columns: auto auto;
     }
 

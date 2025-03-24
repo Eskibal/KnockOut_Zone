@@ -1,4 +1,5 @@
 <?php
+
     session_start();
 
     $passwordErr = $userErr = "";
@@ -15,8 +16,7 @@
         }
 
         if(isset($_POST['submit'])) {
-            $_SESSION['user'] = $user;
-            $_SESSION['password'] = $password;
+            $uc->login();
         }
     }
 ?>
