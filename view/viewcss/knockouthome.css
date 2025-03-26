@@ -141,6 +141,11 @@ a[href="knockoutlogin.html"]:hover {
     height: 20%;
 }
 
+video {
+    margin-top: 8.2%;
+    width: 100%;
+}
+
 .knockoutlogo {
     position:absolute;
     width: auto;
