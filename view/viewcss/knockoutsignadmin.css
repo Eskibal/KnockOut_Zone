@@ -56,7 +56,6 @@ input[type=text]:hover {
 }
 
 div.link a {
-    padding: 5px;
     transition: font-size 0.3s, color 0.3s;
 }
 
