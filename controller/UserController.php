@@ -26,6 +26,9 @@
 
             //check BBDD
             $stmt = $this->conn->prepare(query: "SELECT name, password FROM users WHERE name=? AND password=?");
+            if (!$stmt) {
+                die("Error preparing statement: " . $this->conn->error);
+            }
             $stmt->bind_param( "ss", $username, $password);
             $stmt->execute();
         
@@ -34,6 +37,7 @@
                 $_SESSION["logged"] = true;
                 $_SESSION["user"] = $username;
                 // close connection
+                $stmt->close();
                 $this->conn->close();
 
                 // redirect to home page

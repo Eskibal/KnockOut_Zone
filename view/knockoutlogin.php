@@ -15,8 +15,8 @@
         </a>
         <form action="../controller/login.php" method="POST">
             <input type="hidden" name="login" value="1">
-            <label for="username">User</label>
-            <input type="text" name="username" id="username" placeholder="example_mcexample">
+            <label for="user">User</label>
+            <input type="text" name="user" id="user" placeholder="example_mcexample">
 
             <label for="password">Password</label>
             <input type="text" name="password" id="password" placeholder="123ABC..">
@@ -26,7 +26,7 @@
             <div class="link">
                 No account? <a href="knockoutsignin.php">Register!</a> 
             </div>
-            <input type="submit" value="Log in">
+            <input type="submit" value="Log in" name="login">
         </form>
     </div>
 </body>
