@@ -24,10 +24,10 @@
             <label for="password">Password</label>
             <input type="text" name="password" id="password" placeholder="123ABC..">
             <div class="link">
-                Got an account?&nbsp;<a href="knockoutlogin.html"> Log in!</a> 
+                Got an account?&nbsp;<a href="knockoutlogin.php"> Log in!</a> 
             </div>
             <div class="link">
-                Want to be a&nbsp;<a href="knockoutsignadmin.html">Knockout Admin?</a> 
+                Want to be a&nbsp;<a href="knockoutsignadmin.php">Knockout Admin?</a> 
             </div>
             <input type="submit" value="Register as a User">
         </form>

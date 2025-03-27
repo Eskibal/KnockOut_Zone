@@ -37,12 +37,12 @@
                 $this->conn->close();
 
                 // redirect to home page
-                header(header: "Location: ../view/profile.php");
+                header(header: "Location:profile.php");
                 exit();
             }
         }
 
-        public function logout(): void {
+        public function logout(): void {      
 
         }
 

@@ -27,10 +27,10 @@
             <p/>
             <input type="file" name="pfp" id="pfp" accept=".jpg, .jpeg, .png, .gif">
             <div class="link">
-                Got an account?&nbsp;<a href="knockoutlogin.html">Log in!</a>
+                Got an account?&nbsp;<a href="knockoutlogin.php">Log in!</a>
             </div>
             <div class="link">
-                Want to be a&nbsp;<a href="knockoutsignin.html">Knockout User?</a> 
+                Want to be a&nbsp;<a href="knockoutsignin.php">Knockout User?</a> 
             </div>
             <input type="submit" value="Register as an Admin">
         </form>

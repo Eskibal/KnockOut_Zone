@@ -15,8 +15,8 @@
         </a>
         <form action="../controller/login.php" method="POST">
             <input type="hidden" name="login" value="1">
-            <label for="user">User</label>
-            <input type="text" name="user" id="user" placeholder="example_mcexample">
+            <label for="username">User</label>
+            <input type="text" name="username" id="username" placeholder="example_mcexample">
 
             <label for="password">Password</label>
             <input type="text" name="password" id="password" placeholder="123ABC..">
@@ -24,7 +24,7 @@
                 <a href="#">¿Has olvidado la contraseña?</a> 
             </div>-->
             <div class="link">
-                No account? <a href="knockoutsignin.html">Register!</a> 
+                No account? <a href="knockoutsignin.php">Register!</a> 
             </div>
             <input type="submit" value="Log in">
         </form>
