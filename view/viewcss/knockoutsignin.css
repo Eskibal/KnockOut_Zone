@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:60px;
+    font-family: 'Bahnschrift';
+}
+
+#logo {
+    display: block;
+    margin: -10px;
+    width: 200px;
+    border-radius: 5px;
+    justify-self: center;
+    transition: width 0.4s, filter 0.4s, box-shadow 0.4s;
+}
+
+#logo:hover {
+    width: 205px;
+    cursor:grabbing;
+    box-shadow: 7px 10px 1px #00000025;
+    filter: brightness(9999999) contrast(9999999);
+}
+
+.container {
+    background: linear-gradient(to top, #d9d9d9, #1fa5e9);
+}
+
+div {
+    border-radius: 5px;
+    padding: 20px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    font-family: 'Bahnschrift';
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    cursor:text;
+    transition: box-shadow 0.3s;
+}
+
+input[type=text]:hover {
+    box-shadow: 7px 5px 1px #1fa5e9;
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -10px;
+}
+
+div.link a {
+    transition: font-size 0.3s, color 0.3s;
+}
+
+div.link a:hover {
+    font-size: 17px;
+    color: #0000ac;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #1fa5e9;
+    font-family: 'Bahnschrift';
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #178eca;
+    box-shadow: 7px 5px 1px #00000025;
+  }
+
+/* Horizontal screens and PCs*/
+@media screen and (min-width: 767px) {
+    body {
+        padding-inline: 200px;
+        margin: 50px;
+    }
+}
+
+/*Phones and vertical screens*/
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    body {
+        font-size: 15px;
+        margin: 60px;
+        padding: 10px;
+    }
+}
+
+/* Big Screens*/
+@media screen and (min-width: 1440px) {
+    body {
+        padding-inline: 500px;
+        margin: 30px auto;
+    }
+}
