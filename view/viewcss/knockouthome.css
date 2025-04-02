@@ -220,7 +220,7 @@ p.topictype {
 }
 
 .cliptopic:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 6px 8px 0 #00000075;
 }
 
