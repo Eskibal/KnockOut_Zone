@@ -11,11 +11,11 @@ body {
     width: 200px;
     border-radius: 5px;
     justify-self: center;
-    transition: width 0.4s, filter 0.4s, box-shadow 0.4s;
+    transition: transform 0.4s, filter 0.4s, box-shadow 0.4s;
 }
 
 #logo:hover {
-    width: 205px;
+    transform: scale(1.1);
     box-shadow: 7px 10px 1px #00000025;
     cursor:grabbing;
     filter: brightness(9999999) contrast(9999999);
@@ -56,11 +56,11 @@ input[type=text]:hover {
 
 div.link a {
     padding: 5px;
-    transition: font-size 0.3s, color 0.3s;
+    transition: transform 0.3s, color 0.3s;
 }
 
 div.link a:hover {
-    font-size: 17px;
+    transform: scale(1.1);
     color: #0000ac;
 }
 
