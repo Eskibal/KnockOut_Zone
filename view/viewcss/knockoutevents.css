@@ -104,13 +104,14 @@ a[href="knockoutlogin.php"]:hover {
   transition: transform 0.3s ease;
 }
 
-.longtopic:hover {
-  transform: scale(1.03);
-}
-
 .longtopic img {
   width: 100%;
   height: auto;
+  transition: transform 0.6s;
+}
+
+.longtopic img:hover {
+  transform: scale(1.02);
 }
 
 .desc {
@@ -140,6 +141,11 @@ footer {
 .socials {
   width: 32px;
   margin: 0 8px;
+  transition: transform 0.5s;
+}
+
+.socials:hover {
+  transform: scale(1.2);
 }
 
 .footera {
@@ -147,10 +153,11 @@ footer {
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
+  transition: transform 0.5s, color 0.5s;
 }
 .footera:hover {
   transform: scale(1.2);
-  color: white;
+  color: red;
 }
 
 #logofoot {

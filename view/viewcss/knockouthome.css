@@ -241,7 +241,7 @@ aside {
 }
 
 .socials:hover {
-    transform: scale(1.2);
+    transform: scale(0.8);
     background-color: white;
 }
 
@@ -272,7 +272,7 @@ footer {
 }
 
 #logofoot:hover {
-    transform: scale(1.1);
+    transform: scale(0.8);
     cursor:grabbing;
     filter: brightness(9999999) contrast(9999999);
     box-shadow: 7px 5px 1px red;
