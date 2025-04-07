@@ -37,7 +37,7 @@
                 $this->conn->close();
 
                 // redirect to home page
-                header(header: "Location:profile.php");
+                header(header: "Location:../view/profile.php");
                 exit();
             }
         }
