@@ -19,7 +19,7 @@
             <input type="text" name="username" id="username" placeholder="example_mcexample">
 
             <label for="password">Password</label>
-            <input type="text" name="password" id="password" placeholder="123ABC..">
+            <input type="password" name="password" id="password" placeholder="123ABC..">
             <!--<div class="link">
                 <a href="#">¿Has olvidado la contraseña?</a> 
             </div>-->
