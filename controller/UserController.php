@@ -1,56 +1,56 @@
 <?php
-    session_start();
+session_start();
 
-    class UserController {
+class UserController
+{
 
-        private $conn;
+    private $conn;
 
-        public function __construct() {
-            $servername = "localhost";
-            $username = "root";
-            $password = "";
-            $dbname = "knockoutzone";
+    public function __construct()
+    {
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "knockoutzone";
 
-            $this->conn = new mysqli($servername, $username, $password, $dbname);
-            
-            // Check connection
-            if ($this->conn->connect_error) {
-                die("Connection failed: " . $this->conn->connect_error);
-            }
-            echo "Connection Succesfully";
+        $this->conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Check connection
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
         }
-        public function login(): void {
-            // get data from form request
-            $username = $_POST["username"];
-            $password = $_POST["password"];
+        echo "Connection Succesfully";
+    }
+    public function login(): void
+    {
+        $username = $_POST["username"];
+        $password = $_POST["password"];
 
-            //check BBDD
-            $stmt = $this->conn->prepare(query: "SELECT * FROM users WHERE name=? AND password=?");
-            $stmt->bind_param( "ss", $username, $password);
-            $stmt->execute();
-        
-            if ($stmt->fetch()) {
-                // authentication success
-                $_SESSION["logged"] = true;
-                $_SESSION["user"] = $username;
-                // close connection
-                $this->conn->close();
+        $stmt = $this->conn->prepare("SELECT * FROM users WHERE name=? AND password=?");
+        $stmt->bind_param("ss", $username, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-                // redirect to home page
-                header(header: "Location:../view/profile.php");
-                exit();
-            }
-        }
-
-        public function logout(): void {
-            session_destroy();
-            header(header: "Location:../view/knockoutlogin.php");
-            exit();     
-
-        }
-
-        public function register(): void {
-
+        if ($result->num_rows === 1) {
+            $_SESSION["logged"] = true;
+            $_SESSION["user"] = $username;
+            $this->conn->close();
+            header("Location: ../view/profile.php");
+            exit();
+        } else {
+            $_SESSION["error"] = "Usuario o contraseña incorrectos";
+            header("Location: ../view/knockoutlogin.php");
+            exit();
         }
     }
-?>
+
+
+    public function logout(): void
+    {
+        session_destroy();
+        header(header: "Location:../view/knockoutlogin.php");
+        exit();
+    }
+
+    public function register(): void {}
+}
