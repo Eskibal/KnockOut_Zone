@@ -67,10 +67,10 @@ nav {
   transform: scale(1.2);
 }
 
-a[href="knockoutlogin.php"] {
+a[href="profile.php"] {
   transition: color 0.4s, transform 0.4s;
 }
-a[href="knockoutlogin.php"]:hover {
+a[href="profile.php"]:hover {
   color: #1fa5e9;
 }
 

@@ -42,7 +42,10 @@
             }
         }
 
-        public function logout(): void {      
+        public function logout(): void {
+            session_destroy();
+            header(header: "Location:../view/knockoutlogin.php");
+            exit();     
 
         }
 

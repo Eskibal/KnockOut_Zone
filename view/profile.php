@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-if (!isset($_SESSION['user_id'])) {
-    header("Location:login.php");
+if (isset($_SESSION['user_id'])) {
+    header("Location:../controller/login.php");
     exit();
 }
 
@@ -14,8 +14,7 @@ if ($conn->connect_error) {
 }
 
 // get user data
-$user_id = $_SESSION['user_id'];
-$sql = "SELECT name, email, password FROM users WHERE id = ?";
+$sql = "SELECT * FROM users WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $user_id);
 $stmt->execute();
@@ -36,17 +35,46 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="viewcss/profile.css">
-    <title>Profile</title>
+    <title>KnockoutZone - Profile</title>
 </head>
 
 <body>
-
+    <header>
+            <nav>
+                <a href="userhome.html" id="logo">
+                    <img id="logo" src="../images/logo.png" alt="Home">
+                </a>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">STORE</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">FORUM</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">RANKING</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">FIGHTERS</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="knockoutevents.html" class="nava">EVENTS</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli">
+                            <a href="#" class="nava">
+                                <!--img src="../images/search.png" alt="Buscar" style="width:60px; margin-left: -46px;"-->
+                                SEARCH
+                            </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
     <div class="container">
         <h1>Bienvenido, <?php echo htmlspecialchars($user['user']); ?>!</h1>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
         <!--<p><strong>Rol:</strong> <?php //echo htmlspecialchars($user['role']); ?></p>-->
 
-        <a href="logout.php" class="btn">Log out</a>
+        <a href="../controller/logout.php" class="btn">Log out</a>
 
 </body>
 
