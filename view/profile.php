@@ -1,10 +1,6 @@
 <?php
 
 session_start();
-if (isset($_SESSION['user_id'])) {
-    header("Location:../controller/login.php");
-    exit();
-}
 
 // connection to BBDD
 $conn = new mysqli("localhost", "root", "", "knockoutzone");

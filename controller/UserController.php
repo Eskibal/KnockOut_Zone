@@ -25,7 +25,7 @@
             $password = $_POST["password"];
 
             //check BBDD
-            $stmt = $this->conn->prepare(query: "SELECT name, password FROM users WHERE name=? AND password=?");
+            $stmt = $this->conn->prepare(query: "SELECT * FROM users WHERE name=? AND password=?");
             $stmt->bind_param( "ss", $username, $password);
             $stmt->execute();
         
