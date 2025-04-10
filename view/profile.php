@@ -55,14 +55,6 @@ $conn->close();
                 <ul class="navul">
                     <li class="navli"><a href="knockoutevents.html" class="nava">EVENTS</a></li>
                 </ul>
-                <ul class="navul">
-                    <li class="navli">
-                            <a href="#" class="nava">
-                                <!--img src="../images/search.png" alt="Buscar" style="width:60px; margin-left: -46px;"-->
-                                SEARCH
-                            </a>
-                    </li>
-                </ul>
             </nav>
         </header>
     <div class="container">
@@ -71,7 +63,7 @@ $conn->close();
         <!--<p><strong>Rol:</strong> <?php //echo htmlspecialchars($user['role']); ?></p>-->
 
         <a href="../controller/logout.php" class="btn">Log out</a>
-
+    </div>
 </body>
 
 </html>
