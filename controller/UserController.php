@@ -6,21 +6,21 @@ class UserController
 
     private $conn;
 
-    public function __construct()
-    {
+    public function __construct() {
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "knockoutzone";
-
+    
         $this->conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Check connection
+    
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
-        // echo "Connection Succesfully";
+    
+        // echo "Connection Succesfully";  // comentar esto para evitar errores con header()
     }
+    
     public function login(): void
     {
         $username = $_POST["username"];
