@@ -13,7 +13,7 @@
         <a href="knockouthome.html" id="logo">
             <img id="logo" src="../images/logo.png" alt="Home">
         </a>
-        <form action="signadmin.php" method="post">
+        <form action="../controller/signadmin.php" method="post">
             <input type="hidden" name="register" value="1">
             <label for="user">User</label>
             <input type="text" name="user" id="user" placeholder="crew_mccrew">
