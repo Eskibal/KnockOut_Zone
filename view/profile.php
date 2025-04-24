@@ -10,7 +10,7 @@ $result = $query->get_result();
 $row = $result->fetch_assoc();
 
 if (!empty($row["path_pfp"])) {
-    echo "<img src='../images/profiles/" . $row["path_pfp"] . "' alt='Perfil' style='width:150px; border-radius:50%;'>";
+    echo "<img src='../images/profiles/'" . $row["path_pfp"] . "' alt='Perfil' style='width:150px; border-radius:50%;'>";
 } else {
     echo "<p>No profile picture</p>";
 }
