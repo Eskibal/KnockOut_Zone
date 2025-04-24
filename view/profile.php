@@ -12,7 +12,7 @@ $row = $result->fetch_assoc();
 if (!empty($row["profile_img"])) {
     echo "<img src='../images/profiles/" . $row["profile_img"] . "' alt='Perfil' style='width:150px; border-radius:50%;'>";
 } else {
-    echo "<p>Sin imagen de perfil</p>";
+    echo "<p>No profile picture</p>";
 }
 ?>
 
