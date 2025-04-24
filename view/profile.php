@@ -3,7 +3,7 @@ session_start();
 $conn = new mysqli("localhost", "root", "", "knockoutzone");
 $user = $_SESSION["user"];
 
-$query = $conn->prepare("SELECT path_pfp FROM users WHERE name = ?");
+$query = $conn->prepare("SELECT * FROM users WHERE name = ?");
 $query->bind_param("s", $user);
 $query->execute();
 $result = $query->get_result();
@@ -51,8 +51,8 @@ if (!empty($row["path_pfp"])) {
             </nav>
         </header>
     <div class="container">
-        <h1>Bienvenido, <?php echo htmlspecialchars($user['name']); ?>!</h1>
-        <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
+        <h1>Welcome, <?php echo $row['name']; ?>!</h1>
+        <p><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></p>
         <!--<p><strong>Rol:</strong> <?php //echo htmlspecialchars($user['role']); ?></p>-->
 
         <a href="../controller/logout.php" class="btn">Log out</a>
