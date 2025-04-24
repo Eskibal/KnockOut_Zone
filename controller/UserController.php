@@ -58,7 +58,10 @@ class UserController
         $username = $_POST["user"];
         $password = $_POST["password"];
         $email = $_POST["email"];
-        // Validate input
+
+        $nombre_img = $_FILES["pfp"]["name"];
+        $tipo = $_FILES["pfp"]["type"];
+        $tamano = $_FILES["pfp"]["size"];
 
         if (empty($username) || empty($password) || empty($email)) {
             $_SESSION["error"] = "All fields are required";
@@ -66,14 +69,13 @@ class UserController
             exit();
         }
 
-        // Validate email format
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $_SESSION["error"] = "Invalid email format";
             header("Location: ../view/knockoutsignin.php");
             exit();
         }
 
-        // Check if user already exists
+        // Comprobar si ya existe
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE name=? OR email=?");
         $stmt->bind_param("ss", $username, $email);
         $stmt->execute();
@@ -84,9 +86,28 @@ class UserController
             exit();
         }
 
-        // Insert new user into the database    
-        $stmt = $this->conn->prepare("INSERT INTO users (name, password, email) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $username, $password, $email);
+        // Por defecto no hay imagen
+        $nombre_final = null;
+
+        // Si hay imagen, guardarla
+        if (!empty($nombre_img) && $tamano <= 2000000) {
+            if ($tipo == "image/jpeg" || $tipo == "image/jpg" || $tipo == "image/png") {
+                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/KnockOut_Zone/images/profiles/";
+                if (!file_exists($directorio)) {
+                    mkdir($directorio, 0777, true);
+                }
+
+                $nombre_final = time() . "_" . basename($nombre_img);
+                $ruta_guardada = $directorio . $nombre_final;
+
+                move_uploaded_file($_FILES["pfp"]["tmp_name"], $ruta_guardada);
+            }
+        }
+
+        // Insertar usuario
+        $stmt = $this->conn->prepare("INSERT INTO users (name, password, email, path_pfp) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssss", $username, $password, $email, $nombre_final);
+
         if ($stmt->execute()) {
             $_SESSION["success"] = "User registered successfully";
             header("Location: ../view/knockoutlogin.php");
@@ -141,24 +162,28 @@ class UserController
         header("Location: ../view/profile.php");
         exit();
     }
-    public function registerAdmin(): void {
+    public function registerAdmin(): void
+    {
         $username = $_POST["user"];
         $password = $_POST["password"];
         $email = $_POST["email"];
-        $pfp = $_FILES["pfp"]["name"];
-        // Validate input
+
+        $nombre_img = $_FILES["pfp"]["name"];
+        $tipo = $_FILES["pfp"]["type"];
+        $tamano = $_FILES["pfp"]["size"];
+
         if (empty($username) || empty($password) || empty($email)) {
             $_SESSION["error"] = "All fields are required";
             header("Location: ../view/knockoutsignin.php");
             exit();
         }
-        // Validate email format
+
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $_SESSION["error"] = "Invalid email format";
             header("Location: ../view/knockoutsignin.php");
             exit();
         }
-        // Check if user already exists
+
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE name=? OR email=?");
         $stmt->bind_param("ss", $username, $email);
         $stmt->execute();
@@ -168,15 +193,28 @@ class UserController
             header("Location: ../view/knockoutsignin.php");
             exit();
         }
-        // Insert new user into the database
+
+        // Por defecto: sin imagen
+        $nombre_final = null;
+
+        if (!empty($nombre_img) && $tamano <= 2000000) {
+            if ($tipo == "image/jpeg" || $tipo == "image/jpg" || $tipo == "image/png") {
+                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/KnockOut_Zone/images/profiles/";
+                if (!file_exists($directorio)) {
+                    mkdir($directorio, 0777, true);
+                }
+
+                $nombre_final = time() . "_" . basename($nombre_img);
+                $ruta_guardada = $directorio . $nombre_final;
+
+                move_uploaded_file($_FILES["pfp"]["tmp_name"], $ruta_guardada);
+            }
+        }
+
         $stmt = $this->conn->prepare("INSERT INTO users (name, password, email, path_pfp) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("ssss", $username, $password, $email, $pfp);
+        $stmt->bind_param("ssss", $username, $password, $email, $nombre_final);
+
         if ($stmt->execute()) {
-            // Move the uploaded file to the desired directory
-            $target_dir = "../images/Profiles/";
-            $target_file = $target_dir . basename($_FILES["pfp"]["name"]);
-            move_uploaded_file($_FILES["pfp"]["tmp_name"], $target_file);
-            
             $_SESSION["success"] = "Admin registered successfully";
             header("Location: ../view/knockoutlogin.php");
             exit();

@@ -13,24 +13,31 @@
         <a href="knockouthome.html" id="logo">
             <img id="logo" src="../images/logo.png" alt="Home">
         </a>
-        <form action="../controller/signin.php" method="post">
+        <form action="../controller/signin.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="register" value="1">
+
             <label for="user">User</label>
-            <input type="text" name="user" id="user" placeholder="example_mcexample">
+            <input type="text" name="user" id="user" placeholder="example_mcexample" required>
 
             <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="example@email.com">
+            <input type="email" name="email" id="email" placeholder="example@email.com" required>
 
             <label for="password">Password</label>
-            <input type="text" name="password" id="password" placeholder="123ABC..">
+            <input type="text" name="password" id="password" placeholder="123ABC.." required>
+
+            <label for="pfp">Profile Picture (optional)</label>
+            <input type="file" name="pfp" id="pfp" accept="image/*">
+
             <div class="link">
-                Got an account?&nbsp;<a href="knockoutlogin.php"> Log in!</a> 
+                Got an account?&nbsp;<a href="knockoutlogin.php"> Log in!</a>
             </div>
             <div class="link">
-                Want to be a&nbsp;<a href="knockoutsignadmin.php">Knockout Admin?</a> 
+                Want to be a&nbsp;<a href="knockoutsignadmin.php">Knockout Admin?</a>
             </div>
+
             <input type="submit" value="Register as a User">
         </form>
+
     </div>
 </body>
 
