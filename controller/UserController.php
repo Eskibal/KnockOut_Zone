@@ -11,7 +11,7 @@ class UserController
         $servername = "localhost";
         $username = "root";
         $password = "";
-        $dbname = "Knockoutzone";
+        $dbname = "knockoutzone";
 
         $this->conn = new mysqli($servername, $username, $password, $dbname);
 

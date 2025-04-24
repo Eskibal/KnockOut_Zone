@@ -1,5 +1,5 @@
-CREATE DATABASE Knockoutzone;
-USE Knockoutzone;
+CREATE DATABASE knockoutzone;
+USE knockoutzone;
 
 CREATE TABLE Users (
 	id INT PRIMARY KEY AUTO_INCREMENT,
