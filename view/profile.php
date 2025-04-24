@@ -15,3 +15,48 @@ if (!empty($row["profile_img"])) {
     echo "<p>Sin imagen de perfil</p>";
 }
 ?>
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="viewcss/profile.css">
+    <title>KnockoutZone - Profile</title>
+</head>
+
+<body>
+    <header>
+            <nav>
+                <a href="userhome.html" id="logo">
+                    <img id="logo" src="../images/logo.png" alt="Home">
+                </a>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">STORE</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">FORUM</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">RANKING</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="#" class="nava">FIGHTERS</a></li>
+                </ul>
+                <ul class="navul">
+                    <li class="navli"><a href="knockoutevents.html" class="nava">EVENTS</a></li>
+                </ul>
+            </nav>
+        </header>
+    <div class="container">
+        <h1>Bienvenido, <?php echo htmlspecialchars($user['user']); ?>!</h1>
+        <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
+        <!--<p><strong>Rol:</strong> <?php //echo htmlspecialchars($user['role']); ?></p>-->
+
+        <a href="../controller/logout.php" class="btn">Log out</a>
+    </div>
+</body>
+
+</html>
