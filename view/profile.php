@@ -51,7 +51,7 @@ if (!empty($row["path_pfp"])) {
             </nav>
         </header>
     <div class="container">
-        <h1>Bienvenido, <?php echo htmlspecialchars($user['user']); ?>!</h1>
+        <h1>Bienvenido, <?php echo htmlspecialchars($user['name']); ?>!</h1>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
         <!--<p><strong>Rol:</strong> <?php //echo htmlspecialchars($user['role']); ?></p>-->
 
