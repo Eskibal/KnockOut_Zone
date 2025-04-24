@@ -19,7 +19,7 @@ class UserController
         if ($this->conn->connect_error) {
             die("Connection failed: " . $this->conn->connect_error);
         }
-        echo "Connection Succesfully";
+        // echo "Connection Succesfully";
     }
     public function login(): void
     {
@@ -56,7 +56,6 @@ class UserController
 
 
     public function subirImagenPerfil(): void {
-        session_start();
     
         // Solo admin puede subir imagen (ajusta esto si usas roles)
         if ($_SESSION["user"] !== 'admin') {
