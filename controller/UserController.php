@@ -53,7 +53,8 @@ class UserController
         exit();
     }
 
-    public function register(): void {
+    public function register(): void
+    {
         $username = $_POST["user"];
         $password = $_POST["password"];
         $email = $_POST["email"];
@@ -71,10 +72,10 @@ class UserController
             header("Location: ../view/knockoutsignin.php");
             exit();
         }
-        
+
         // Check if user already exists
         $stmt = $this->conn->prepare("SELECT * FROM users WHERE name=? OR email=?");
-        $stmt->bind_param("ss", $username, $email); 
+        $stmt->bind_param("ss", $username, $email);
         $stmt->execute();
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
@@ -100,48 +101,44 @@ class UserController
 
     public function subirImagenPerfil(): void
     {
-
-        // Solo admin puede subir imagen (ajusta esto si usas roles)
-        if ($_SESSION["user"] !== 'admin') {
+        if (!isset($_SESSION["user"])) {
             header("Location: ../view/profile.php");
             exit();
         }
 
-        $nombre_img = $_FILES['imagen']['name'];
         $user = $_POST['name'];
+        $nombre_img = $_FILES['imagen']['name'];
         $tipo = $_FILES['imagen']['type'];
         $tamano = $_FILES['imagen']['size'];
 
-        if (!empty($nombre_img) && ($tamano <= 2000000)) {
+        if (!empty($nombre_img) && $tamano <= 2000000) {
             if ($tipo == "image/jpeg" || $tipo == "image/jpg" || $tipo == "image/png") {
 
-                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/knockoutzone/images/Profiles/";
+                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/KnockOut_Zone/images/profiles/";
                 if (!file_exists($directorio)) {
                     mkdir($directorio, 0777, true);
                 }
 
-                $nuevo_nombre = time() . "_" . $nombre_img;
+                $nuevo_nombre = time() . "_" . basename($nombre_img);
                 $ruta_guardada = $directorio . $nuevo_nombre;
 
-                move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_guardada);
+                if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_guardada)) {
+                    $stmt = $this->conn->prepare("UPDATE users SET path_pfp = ? WHERE name = ?");
+                    $stmt->bind_param("ss", $nuevo_nombre, $user);
+                    $stmt->execute();
 
-                $stmt = $this->conn->prepare("UPDATE users SET profile_img = ? WHERE name = ?");
-                $stmt->bind_param("ss", $nuevo_nombre, $user);
-                $stmt->execute();
-
-                $_SESSION["success"] = "Image updated successfully.";
-                header("Location: ../view/profile.php");
-                exit();
+                    $_SESSION["success"] = "Imagen subida correctamente.";
+                } else {
+                    $_SESSION["error"] = "Error al guardar la imagen.";
+                }
             } else {
-                $_SESSION["error"] = "Only JPG or PNG images are allowed.";
-                header("Location: ../view/profile.php");
-                exit();
+                $_SESSION["error"] = "Formato no permitido. Solo JPG o PNG.";
             }
         } else {
-            $_SESSION["error"] = "The image is too large or has not been sent.";
-            header("Location: ../view/profile.php");
-            exit();
+            $_SESSION["error"] = "Imagen vacía o demasiado grande.";
         }
+
+        header("Location: ../view/profile.php");
+        exit();
     }
-    
 }

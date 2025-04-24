@@ -10,10 +10,34 @@ $result = $query->get_result();
 $row = $result->fetch_assoc();
 
 if (!empty($row["path_pfp"])) {
-    echo "<img src='../images/profiles/'" . $row["path_pfp"] . "' alt='Perfil' style='width:150px; border-radius:50%;'>";
+    echo "<img src='../images/profiles/" . $row["path_pfp"] . "' alt='Perfil' style='width:150px; border-radius:50%;'>";
 } else {
     echo "<p>No profile picture</p>";
 }
+
+
+// Mostrar errores o mensajes
+if (isset($_SESSION["error"])) {
+    echo "<p style='color:red'>" . $_SESSION["error"] . "</p>";
+    unset($_SESSION["error"]);
+}
+if (isset($_SESSION["success"])) {
+    echo "<p style='color:green'>" . $_SESSION["success"] . "</p>";
+    unset($_SESSION["success"]);
+}
+
+// Formulario solo visible si eres admin
+if ($_SESSION["user"] === 'admin') {
+    echo '
+    <h3>Sube tu imagen de perfil</h3>
+    <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
+        <input type="file" name="imagen" accept="image/*" required>
+        <input type="hidden" name="name" value="' . $_SESSION['user'] . '">
+        <input type="submit" value="Subir imagen">
+    </form>';
+}
+
+
 ?>
 
 

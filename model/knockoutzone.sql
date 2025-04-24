@@ -32,7 +32,7 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `email` varchar(75) NOT NULL,
   `password` varchar(90) NOT NULL,
-  `path_pfp` blob DEFAULT NULL
+  `path_pfp` varchar(500) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
