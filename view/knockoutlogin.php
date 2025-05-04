@@ -1,3 +1,10 @@
+<?php
+session_start();
+$error = $_SESSION["error"] ?? null;
+unset($_SESSION["error"]);
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -13,6 +20,10 @@
         <a href="knockouthome.html" id="logo">
             <img id="logo" src="../images/logo.png" alt="Home">
         </a>
+        <?php if ($error): ?>
+            <p style="color: red; text-align: center; font-weight: bold;"><?= $error ?></p>
+        <?php endif; ?>
+
         <form action="../controller/login.php" method="POST">
             <input type="hidden" name="login" value="1">
             <label for="username">User</label>
@@ -24,7 +35,7 @@
                 <a href="#">¿Has olvidado la contraseña?</a> 
             </div>-->
             <div class="link">
-                No account? <a href="knockoutsignin.php">Register!</a> 
+                No account? <a href="knockoutsignin.php">Register!</a>
             </div>
             <input type="submit" value="Log in" name="login">
         </form>
