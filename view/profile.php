@@ -75,8 +75,6 @@ if (isset($_SESSION["success"])) {
         ?>
         <h1>Welcome, <?php echo $row['name']; ?>!</h1>
         <p><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></p>
-        <!--<p><strong>Rol:</strong> <?php //echo htmlspecialchars($user['role']); 
-                                        ?></p>-->
 
         <a href="../controller/logout.php" class="btn">Log out</a>
     </div>

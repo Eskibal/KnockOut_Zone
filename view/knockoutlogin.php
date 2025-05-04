@@ -31,9 +31,6 @@ unset($_SESSION["error"]);
 
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="123ABC..">
-            <!--<div class="link">
-                <a href="#">¿Has olvidado la contraseña?</a> 
-            </div>-->
             <div class="link">
                 No account? <a href="knockoutsignin.php">Register!</a>
             </div>
