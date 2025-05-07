@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <a href="knockouthome.html" id="logo">
+        <a href="index.html" id="logo">
             <img id="logo" src="../images/logo.png" alt="Home">
         </a>
         <form action="../controller/signin.php" method="POST" enctype="multipart/form-data">

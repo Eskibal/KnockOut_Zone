@@ -10,7 +10,6 @@ body {
     display: block;
     margin: -10px;
     width: 200px;
-    border-radius: 5px;
     justify-self: center;
     transition: transform 0.4s, filter 0.4s, box-shadow 0.4s;
 }
@@ -18,7 +17,6 @@ body {
 #logo:hover {
     transform: scale(1.1);
     cursor:grabbing;
-    box-shadow: 7px 10px 1px #00000025;
     filter: brightness(9999999) contrast(9999999);
 }
 

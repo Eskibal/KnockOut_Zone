@@ -17,7 +17,7 @@ unset($_SESSION["error"]);
 
 <body>
     <div class="container">
-        <a href="knockouthome.html" id="logo">
+        <a href="index.html" id="logo">
             <img id="logo" src="../images/logo.png" alt="Home">
         </a>
         <?php if ($error): ?>
