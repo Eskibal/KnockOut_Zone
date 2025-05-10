@@ -1,106 +1,84 @@
 body {
+    font-family: 'Bahnschrift';
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    font-family: 'Bahnschrift';
+    align-items: center;
+    margin-inline: 10%;
+    background: url('../../resources/images/octagon_background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-#logo {
-    display: block;
-    margin: -10px;
-    width: 200px;
-    justify-self: center;
-    transition: transform 0.4s, filter 0.4s, box-shadow 0.4s;
+.form-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding-inline: 5% 8%;
+    padding-block: 5%;
+    margin-right: 65%;
+    background: linear-gradient(to bottom right, #000000, #333333);
+    opacity: 0.9;
+    margin-block: 10%;
+    color: #ffffff;
 }
 
-#logo:hover {
-    transform: scale(1.1);
-    cursor:grabbing;
-    filter: brightness(9999999) contrast(9999999);
-}
-
-.container {
-    background: linear-gradient(to top, #d9d9d9, #1fa5e9);
-}
-
-div {
-    border-radius: 5px;
-    padding: 20px
-}
-
-input[type=text], select {
+input[type="text"],
+input[type="password"] {
+    font-family: 'Consolas', monospace;
     width: 100%;
-    padding: 12px 20px;
-    font-family: 'Bahnschrift';
+    padding: 10px;
     margin: 10px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    cursor:text;
+    border-radius: 5px;
     transition: box-shadow 0.3s;
 }
 
-input[type=text]:hover {
-    box-shadow: 7px 5px 1px #1fa5e9;
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    box-shadow: 0 0 30px #acacac;
 }
 
-.link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: -10px;
-}
-
-div.link a {
-    padding: 5px;
-    transition: transform 0.3s, color 0.3s;
-}
-
-div.link a:hover {
-    transform: scale(1.1);
-    color: #0000ac;
-}
-
-input[type=submit] {
-    width: 100%;
-    background-color: #1fa5e9;
+input[type="submit"] {
     font-family: 'Bahnschrift';
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
+    background: linear-gradient(to left top, #000000, #333333);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 100px;
+    border-radius: 5px;
     border: none;
-    border-radius: 4px;
+    margin-block-start: 5%;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #178eca;
-    box-shadow: 7px 5px 1px #00000025;
-  }
-
-/* Horizontal screens and PCs*/
-@media screen and (min-width: 767px) {
-    body {
-        padding-inline: 200px;
-        margin: 50px;
-    }
+    transition: background 0.3s, transform 0.3s;
 }
 
-/*Phones and vertical screens*/
-@media screen and (max-width: 767px) and (orientation: portrait) {
-    body {
-        font-size: 15px;
-        margin: 60px;
-        padding: 10px;
-    }
+input[type="submit"]:hover {
+    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
+    transform: scale(1.03);
 }
 
-/* Big Screens*/
-@media screen and (min-width: 1440px) {
-    body {
-        padding-inline: 500px;
-        margin: 50px auto;
-    }
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ffffff;
+    margin-block: 5%;
+}
+
+a[href="index.html"] {
+    text-decoration: none;
+    position: absolute;
+    font-family: 'Bahnschrift';
+    font-size: 50px;
+    left: 9%;
+    padding: 0px 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    top: 110px;
+    background: linear-gradient(to left top, #000000, #333333);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+a[href="index.html"]:hover {
+    background: linear-gradient(to right bottom, #c40000, #5d0000);
+    transform: scale(1.03);
 }

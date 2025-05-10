@@ -1,43 +1,35 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign in - Knockout Zone</title>
-    <link rel="stylesheet" href="viewcss/knockoutsignin.css">
+    <title>Register - Knockout Zone</title>
+    <link rel="stylesheet" href="css/register.css">
 </head>
 
 <body>
-    <div class="container">
-        <a href="index.html" id="logo">
-            <img id="logo" src="../images/logo.png" alt="Home">
-        </a>
-        <form action="../controller/signin.php" method="POST" enctype="multipart/form-data">
-            <input type="hidden" name="register" value="1">
-
-            <label for="user">User</label>
-            <input type="text" name="user" id="user" placeholder="example_mcexample" required>
-
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="example@email.com" required>
-
-            <label for="password">Password</label>
-            <input type="text" name="password" id="password" placeholder="123ABC.." required>
-
-            <label for="pfp">Profile Picture (optional)</label>
-            <input type="file" name="pfp" id="pfp" accept="image/*">
-
-            <div class="link">
-                Got an account?&nbsp;<a href="knockoutlogin.php"> Log in!</a>
+    <div class="form-container">
+        <h1>USER REGISTER</h1>
+        <form action="../controller/register.php" method="POST" enctype="multipart/form-data">
+        <hr>    
+        <input type="hidden" name="register" value="1">
+            <label for="email">Email *</label>
+            <input type="email" name="email" id="email" placeholder="user@email.com" required>
+            <div class="label-group">
+                <label for="user">Username *</label>
+                <label for="password">Password *</label>
             </div>
-            <div class="link">
-                Want to be a&nbsp;<a href="knockoutsignadmin.php">Knockout Admin?</a>
+            <div class="form-group">
+                <input type="text" name="user" id="user" placeholder="knockout_user" required>&nbsp;
+                <input type="password" name="password" id="password" placeholder="123ABC.." required>
             </div>
-
-            <input type="submit" value="Register as a User">
+            <input type="submit" value="Register"><hr>
+            <div class="form-options">
+                Got an account? <a href="vlogin.php"> Log in!</a>
+                <br>Become a <a href="vadmin.php">Knockout Admin!</a></br>
+            </div>
         </form>
-
     </div>
 </body>
 
