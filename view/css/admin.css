@@ -1,106 +1,116 @@
 body {
+    font-family: 'Bahnschrift';
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
-    padding:60px;
-    font-family: 'Bahnschrift';
+    align-items: center;
+    margin-inline: 10%;
+    background: url('../../resources/images/gym_background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-#logo {
-    display: block;
-    margin: -10px;
-    width: 200px;
-    justify-self: center;
-    transition: transform 0.4s, filter 0.4s, box-shadow 0.4s;
+h1 {
+    font-family: 'Bahnschrift Light';
 }
 
-#logo:hover {
-    transform: scale(1.1);
-    cursor:grabbing;
-    filter: brightness(9999999) contrast(9999999);
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 5%;
+    border-radius: 20px;
+    padding-block-start: 5%;
+    margin-right: 60%;
+    background: linear-gradient(to top left, #000000, #333333);
+    opacity: 0.9;
+    margin-block: 5%;
+    color: #ffffff;
 }
 
-.container {
-    background: linear-gradient(to top, #d9d9d9, #e91f1f);
-}
-
-div {
-    border-radius: 5px;
-    padding: 20px;
-}
-
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    font-family: 'Bahnschrift';
+.form-group {
+    display: flex;
+    flex-direction: row;
     margin: 10px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    cursor:text;
+}
+
+.label-group{
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0;
+}
+
+.label-group label[for="user"] {
+    margin-right: 125px;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    font-family: 'Consolas', monospace;
+    width: 100%;
+    padding-block: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
     transition: box-shadow 0.3s;
 }
 
-input[type=text]:hover {
-    box-shadow: 7px 5px 1px #e91f1f;
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    outline: none;
+    box-shadow: 0 0 30px #acacac;
 }
 
-.link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: -10px;
-}
-
-div.link a {
-    transition: transform 0.3s, color 0.3s;
-}
-
-div.link a:hover {
-    transform: scale(1.1);
-    color: #0000ac;
-}
-
-input[type=submit] {
-    width: 100%;
-    background-color: #e91f1f;
-    font-family: 'Bahnschrift';
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
+input[type="file"]::file-selector-button {
+    content: 'Choose File';
+    font-family: 'Bahnschrift Light';
+    background: linear-gradient(to left top, #000000, #333333);
+    color: #ffffff;
+    font-size: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-  }
-  
-  input[type=submit]:hover {
-    background-color: #ca1717;
-    box-shadow: 7px 5px 1px #00000025;
-  }
-
-/* Horizontal screens and PCs*/
-@media screen and (min-width: 767px) {
-    body {
-        padding-inline: 200px;
-        margin: 50px;
-    }
+    transition: background 0.3s, transform 0.3s;
 }
 
-/*Phones and vertical screens*/
-@media screen and (max-width: 767px) and (orientation: portrait) {
-    body {
-        font-size: 15px;
-        margin: 60px;
-        padding: 10px;
-    }
+input[type="file"]::file-selector-button:hover {
+    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
+    transform: scale(1.02);
 }
 
-/* Big Screens*/
-@media screen and (min-width: 1440px) {
-    body {
-        padding-inline: 500px;
-        margin: 30px auto;
-    }
+
+input[type="submit"] {
+    font-family: 'Bahnschrift';
+    background: linear-gradient(to left top, #000000, #333333);
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 170px;
+    border-radius: 5px;
+    border: none;
+    margin-block-start: 5%;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
+    transform: scale(1.03);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin-block: 10px 20px;
+    background-color: #ffffff;
+}
+
+.form-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-block: 5%;
 }
