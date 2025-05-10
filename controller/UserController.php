@@ -39,8 +39,8 @@ class UserController
             header("Location: ../view/profile.php");
             exit();
         } else {
-            $_SESSION["error"] = "Usuario o contraseña incorrectos";
-            header("Location: ../view/knockoutlogin.php");
+            $_SESSION["error"] = "Username or password incorrect";
+            header("Location: ../view/vlogin.php");
             exit();
         }
     }
@@ -49,7 +49,7 @@ class UserController
     public function logout(): void
     {
         session_destroy();
-        header(header: "Location:../view/knockoutlogin.php");
+        header(header: "Location:../view/vlogin.php");
         exit();
     }
 
@@ -65,13 +65,13 @@ class UserController
 
         if (empty($username) || empty($password) || empty($email)) {
             $_SESSION["error"] = "All fields are required";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $_SESSION["error"] = "Invalid email format";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
 
@@ -82,7 +82,7 @@ class UserController
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
             $_SESSION["error"] = "User or email already exists";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
 
@@ -92,7 +92,7 @@ class UserController
         // Si hay imagen, guardarla
         if (!empty($nombre_img) && $tamano <= 2000000) {
             if ($tipo == "image/jpeg" || $tipo == "image/jpg" || $tipo == "image/png") {
-                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/KnockOut_Zone/images/profiles/";
+                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/knockoutzone/resources/profiles/";
                 if (!file_exists($directorio)) {
                     mkdir($directorio, 0777, true);
                 }
@@ -110,11 +110,11 @@ class UserController
 
         if ($stmt->execute()) {
             $_SESSION["success"] = "User registered successfully";
-            header("Location: ../view/knockoutlogin.php");
+            header("Location: ../view/vlogin.php");
             exit();
         } else {
             $_SESSION["error"] = "Error registering user";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
     }
@@ -135,7 +135,7 @@ class UserController
         if (!empty($nombre_img) && $tamano <= 2000000) {
             if ($tipo == "image/jpeg" || $tipo == "image/jpg" || $tipo == "image/png") {
 
-                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/KnockOut_Zone/images/profiles/";
+                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/knockoutzone/resources/profiles/";
                 if (!file_exists($directorio)) {
                     mkdir($directorio, 0777, true);
                 }
@@ -148,15 +148,15 @@ class UserController
                     $stmt->bind_param("ss", $nuevo_nombre, $user);
                     $stmt->execute();
 
-                    $_SESSION["success"] = "Imagen subida correctamente.";
+                    $_SESSION["success"] = "Image uploaded successfully.";
                 } else {
-                    $_SESSION["error"] = "Error al guardar la imagen.";
+                    $_SESSION["error"] = "Error while saving image.";
                 }
             } else {
-                $_SESSION["error"] = "Formato no permitido. Solo JPG o PNG.";
+                $_SESSION["error"] = "Format not allowed. Only JPG or PNG.";
             }
         } else {
-            $_SESSION["error"] = "Imagen vacía o demasiado grande.";
+            $_SESSION["error"] = "Empty image or to big.";
         }
 
         header("Location: ../view/profile.php");
@@ -174,13 +174,13 @@ class UserController
 
         if (empty($username) || empty($password) || empty($email)) {
             $_SESSION["error"] = "All fields are required";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
 
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $_SESSION["error"] = "Invalid email format";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
 
@@ -190,7 +190,7 @@ class UserController
         $result = $stmt->get_result();
         if ($result->num_rows > 0) {
             $_SESSION["error"] = "User or email already exists";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
 
@@ -199,7 +199,7 @@ class UserController
 
         if (!empty($nombre_img) && $tamano <= 2000000) {
             if ($tipo == "image/jpeg" || $tipo == "image/jpg" || $tipo == "image/png") {
-                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/KnockOut_Zone/images/profiles/";
+                $directorio = $_SERVER['DOCUMENT_ROOT'] . "/knockoutzone/resources/profiles/";
                 if (!file_exists($directorio)) {
                     mkdir($directorio, 0777, true);
                 }
@@ -216,11 +216,11 @@ class UserController
 
         if ($stmt->execute()) {
             $_SESSION["success"] = "Admin registered successfully";
-            header("Location: ../view/knockoutlogin.php");
+            header("Location: ../view/vlogin.php");
             exit();
         } else {
             $_SESSION["error"] = "Error registering admin";
-            header("Location: ../view/knockoutsignin.php");
+            header("Location: ../view/vregister.php");
             exit();
         }
     }

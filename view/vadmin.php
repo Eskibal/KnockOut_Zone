@@ -11,7 +11,7 @@
 <body>
     <div class="form-container">
         <h1>ADMIN REGISTER</h1>
-        <form action="../controller/admin.php" method="POST" enctype="multipart/form-data">
+        <form action="../controller/signadmin.php" method="POST" enctype="multipart/form-data">
         <hr>    
         <input type="hidden" name="register" value="1">
             <label for="email">Email *</label>
