@@ -39,7 +39,7 @@ $row = $result->fetch_assoc();
                         echo '<img src="../resources/profiles/' . htmlspecialchars($row['path_pfp']) . '" alt="Profile Picture">';
                     } else {
                         echo '<img src="../resources/profiles/default-profile.png" alt="Default Profile Picture">';
-                        }
+                    }
                     ?>
                 </a>
             </nav>
@@ -49,15 +49,13 @@ $row = $result->fetch_assoc();
         <hr>
         <article>
             <section>
-                <a href="vlogin.php">
-                    <img src="../resources/images/jiripeleador.jpg" alt="">
-                    <hr>
-                    <h3>WATCH & ENJOY</h3>
-                    <h2>UFC EVENTS ON LIVE</h2>
-                </a>
+                <img src="../resources/images/jiripeleador.jpg" alt="">
+                <hr>
+                <h3 style="color:red; font-style:italic">WATCH & ENJOY</h3>
+                <h2>UFC EVENTS ON LIVE</h2>
             </section>
             <section>
-                <a href="vlogin.php">
+                <a href="events.php">
                     <img src="../resources/images/pantojasakura.jpg" alt="">
                     <hr>
                     <h3>EVENT</h3>
@@ -67,7 +65,7 @@ $row = $result->fetch_assoc();
             </section>
             <aside>
                 <section>
-                    <a href="vlogin.php">
+                    <a href="events.php">
                         <img src="../resources/images/kattarclip.jpg" alt="">
                         <hr>
                         <h3>EVENT</h3>
@@ -76,7 +74,7 @@ $row = $result->fetch_assoc();
                     </a>
                 </section>
                 <section>
-                    <a href="vlogin.php">
+                    <a href="events.php">
                         <img src="../resources/images/dircusevent2.jpg" alt="">
                         <hr>
                         <h3>EVENT</h3>
@@ -86,7 +84,7 @@ $row = $result->fetch_assoc();
                 </section>
             </aside>
             <section>
-                <a href="vlogin.php">
+                <a href="#">
                     <img src="../resources/images/kattarclip.jpg" alt="">
                     <hr>
                     <h3>RANKING</h3>
@@ -96,7 +94,7 @@ $row = $result->fetch_assoc();
             </section>
             <aside>
                 <section>
-                    <a href="vlogin.php">
+                    <a href="#">
                         <img src="../resources/images/kattarclip.jpg" alt="">
                         <hr>
                         <h3>FORUM</h3>
@@ -105,7 +103,7 @@ $row = $result->fetch_assoc();
                     </a>
                 </section>
                 <section>
-                    <a href="vlogin.php">
+                    <a href="#">
                         <img src="../resources/images/dircusevent2.jpg" alt="">
                         <hr>
                         <h3>FORUM</h3>
@@ -115,7 +113,7 @@ $row = $result->fetch_assoc();
                 </section>
             </aside>
             <section>
-                <a href="vlogin.php">
+                <a href="#">
                     <img src="../resources/images/adesanyaclip.jpg" alt="">
                     <hr>
                     <h3>STORE</h3>
@@ -124,7 +122,7 @@ $row = $result->fetch_assoc();
                 </a>
             </section>
             <section>
-                <a href="vlogin.php">
+                <a href="#">
                     <img src="../resources/images/dircusevent.jpg" alt="">
                     <hr>
                     <h3>FIGHTERS</h3>
