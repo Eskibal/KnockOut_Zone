@@ -30,7 +30,6 @@
                 <br>Become a <a href="vadmin.php">Knockout Admin!</a></br>
             </div>
         </form>
-    </div>
 </body>
 
 </html>

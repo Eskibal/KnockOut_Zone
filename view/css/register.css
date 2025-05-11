@@ -9,6 +9,34 @@ body {
     background-size: cover;
 }
 
+header {
+    max-width: 100%;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    background: linear-gradient(to bottom right, #000000, #333333);
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.logo-container {
+    display: block;
+    width: 90px;
+    transition: transform 0.3s;
+}
+
+.logo-container img {
+    filter: brightness(0) invert(1);
+    width: 100%;
+}
+.logo-container:hover {
+    transform: scale(1.1);
+}
+
 h1 {
     font-family: 'Bahnschrift Light';
 }

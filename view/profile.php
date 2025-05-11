@@ -33,13 +33,13 @@ if (isset($_SESSION["success"])) {
 <body>
     <header>
         <nav>
-            <a href="home.html" class="logo-container">
+            <a href="home.php" class="logo-container">
                 <img src="../resources/images/logolight.png" alt="Knockout Zone Logo">
             </a>
             <ul class="nav-list">
                 <li><a href="store.html">STORE</a></li>
                 <li><a href="forum.html">FORUM</a></li>
-                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="events.php">EVENTS</a></li>
                 <li><a href="fighters.html">FIGHTERS</a></li>
                 <li><a href="ranking.html">RANKING</a></li>
             </ul>
@@ -55,7 +55,7 @@ if (isset($_SESSION["success"])) {
             <?php endif; ?>
 
             <?php if (!empty($row["path_pfp"])): ?>
-                <img src="../images/profiles/<?php echo htmlspecialchars($row["path_pfp"]); ?>" alt="Profile Picture">
+                <img src="../resources/profiles/<?php echo htmlspecialchars($row["path_pfp"]); ?>" alt="Profile Picture">
             <?php else: ?>
                 <p>No profile picture</p>
             <?php endif; ?>

@@ -10,7 +10,7 @@
     <div>
         <header>
             <nav>
-                <a href="index.html" class="logo-container">
+                <a href="home.php" class="logo-container">
                     <img class="logo-container" src="../resources/images/logolight.png" alt="Knockout Zone Logo">
                 </a>
                 <ul class="nav-list">
@@ -20,7 +20,15 @@
                     <li><a href="vlogin.php">FIGHTERS</a></li>
                     <li><a href="vlogin.php">RANKING</a></li>
                 </ul>
-                <a href="profile.php" class="login-button">USER</a>
+                <a href="profile.php" class="login-button">
+                    <?php
+                    if (isset($row['user']) && isset($row['path_pfp'])) {
+                        echo '<img src="../resources/profiles/' . htmlspecialchars($row['path_pfp']) . '" alt="Profile Picture">';
+                    } else {
+                        echo '<img src="../resources/profiles/default-profile.png" alt="Default Profile Picture">';
+                        }
+                    ?>
+                </a>
             </nav>
         </header>
         <img class="poster" src="https://ufc.com/images/styles/background_image_xl_2x/s3/2025-04/051025-ufc-315-muhammad-vs-della-maddalena-EVENT-ART.jpg?h=d1cb525d&itok=DZNZm237" alt="Event Poster">

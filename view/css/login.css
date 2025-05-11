@@ -9,6 +9,16 @@ body {
     background-size: cover;
 }
 
+a[href="index.html"] {
+    display: block;
+    width: 10px;
+    transition: transform 0.3s;
+}
+
+a[href="index.html"]:hover {
+    transform: scale(1.1);
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -19,6 +29,7 @@ body {
     background: linear-gradient(to bottom right, #000000, #333333);
     opacity: 0.9;
     margin-block: 10%;
+    margin-top: 100px;;
     color: #ffffff;
 }
 

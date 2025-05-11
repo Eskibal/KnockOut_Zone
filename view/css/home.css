@@ -1,0 +1,329 @@
+body {
+    font-family: 'Bahnschrift';
+    margin: 0;
+}
+
+header {
+    max-width: 100%;
+}
+
+nav {
+    position: fixed;
+    display: flex;
+    background: linear-gradient(to bottom right, #000000, #333333);
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.logo-container {
+    display: block;
+    width: 90px;
+    transition: transform 0.3s;
+}
+
+.logo-container:hover {
+    transform: scale(1.1);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    margin-inline: 5%;
+}
+
+nav ul li {
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li a {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, font-weight 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+.login-button {
+    color: #ffffff;
+    font-size: 20px;
+    max-width: 100%;
+    width: 1%;
+    padding: 10px 20px;
+    margin-left: 50px;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+}
+
+.login-button img {
+    width: 20px;
+    height: 20px;
+    transform: scale(3);
+}
+
+.login-button:hover {
+    color: #ff0000;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+
+video {
+    width: 100%;
+    height: auto;
+    margin-top: 8%;
+    max-height: 100vh;
+    object-fit: cover;
+}
+
+hr {
+    max-width: 100%;
+    width: 70%
+}
+
+.title {
+    font-size: 60px;
+    font-family: Bahnschrift SemiBold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-inline: 3%;
+    padding: 100px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px #0000001a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding-bottom: 20px;
+    height: auto;
+    max-width: 100%;
+}
+
+section:hover {
+    transform: scale(1.01);
+    box-shadow: 0 6px 12px #00000033;
+}
+
+section a img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid #ddd;
+    transition: transform 0.3s;
+}
+
+section a:hover img {
+    transform: scale(1.05);
+}
+
+section a h3 {
+    font-style: italic;
+    font-size: 18px;
+    color: #ff0000;
+    margin: 10px 0 5px;
+}
+
+section a h2 {
+    font-size: 22px;
+    color: #000;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+section a span {
+    font-size: 16px;
+    color: #f9f9f9;
+    font-family: 'Bahnschrift Light';
+    transition: color 0.3s;
+}
+
+section a:hover span {
+    color: #666;;
+}
+
+section a hr {
+    margin: 10px auto;
+    opacity: 0;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 100%;
+    height: auto;
+    width: 16%;
+}
+
+aside section h2 {
+    font-size: 80%;
+}
+
+aside section span {
+    font-size: 70%;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    background: linear-gradient(to bottom right, #000000, #333333);;
+    color: #ffffff;
+    padding: 20px;
+}
+
+footer a {
+    color: #a8a8a8;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+}
+
+footer a:hover {
+    color: #ff0000;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+/* Pantallas muy grandes (1440px y superiores) */
+@media screen and (min-width: 1440px) {
+    body {
+        font-size: 18px;
+    }
+ 
+    nav {
+        width: 100%;
+    }
+}
+
+/* Telefonos (max 678px) */
+@media screen and (max-width: 678px) {
+    body {
+        font-size: 12px;
+    }
+
+    nav {
+        align-items: center;
+        padding: 20px 0;
+        position: relative;
+    }
+
+    video {
+        display: none;
+    }
+
+    nav ul li a  {
+        font-size: 20px;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .login-button {
+        font-size: 20px;
+        padding: 5px 10px;
+        margin-left: 8%;        
+    }
+
+    article {
+        padding: 50px;
+    }
+    section {
+        width: 100%;
+        padding: 10px;
+    }
+    section a img {
+        width: 100%;
+        height: auto;
+    }
+    section a h3 {
+        font-size: 12px;
+    }
+    section a h2 {
+        font-size: 16px;
+    }
+    section a span {
+        font-size: 14px;
+    }
+    aside {
+        width: 100%;
+        padding: 10px;
+    }
+    footer {
+        grid-template-columns: repeat(1, 100%);
+        padding: 10px;
+        font-size: 18px;
+        text-align: center;
+    }
+    footer a:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+    }
+}
+
+/* Tablets y Pantallas medianas (max 1440px) */
+@media screen and (max-width: 1440px) {
+    body {
+        font-size: 16px;
+    }
+
+    nav {
+        width: 100%;
+    }
+    nav ul li a  {
+        font-size: 20px;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+    nav ul {
+        gap: 5px;
+    }
+
+    .login-button {
+        font-size: 20px;
+        padding: 5px 10px;
+        margin-left: 8%;        
+    }
+
+    article {
+        padding: 10px;
+    }
+    
+    footer {
+        grid-template-columns: repeat(1, 100%);
+        padding: 40px;
+        font-size: 18px;
+    }
+    footer a:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+    }
+}

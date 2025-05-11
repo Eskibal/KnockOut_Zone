@@ -1,3 +1,14 @@
+<?php
+session_start();
+$conn = new mysqli("localhost", "root", "", "knockoutzone");
+$user = $_SESSION["user"];
+
+$query = $conn->prepare("SELECT * FROM users WHERE name = ?");
+$query->bind_param("s", $user);
+$query->execute();
+$result = $query->get_result();
+$row = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +16,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Knockout Zone</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
@@ -18,16 +29,22 @@
                 <ul class="nav-list">
                     <li><a href="store.html">STORE</a></li>
                     <li><a href="forum.html">FORUM</a></li>
-                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="events.php">EVENTS</a></li>
                     <li><a href="fighters.html">FIGHTERS</a></li>
                     <li><a href="ranking.html">RANKING</a></li>
                 </ul>
                 <a href="profile.php" class="login-button">
-                    <img src="../resources/profiles/1745486114_fotoadmin.jpg" alt="">
+                    <?php
+                    if (isset($row['user']) && isset($row['path_pfp'])) {
+                        echo '<img src="../resources/profiles/' . htmlspecialchars($row['path_pfp']) . '" alt="Profile Picture">';
+                    } else {
+                        echo '<img src="../resources/profiles/default-profile.png" alt="Default Profile Picture">';
+                        }
+                    ?>
                 </a>
             </nav>
         </header>
-                <video src="../resources/videos/knockoutclip ‐ Hecho con Clipchamp.mp4" loop autoplay muted poster="../resources/images/evento.jpg"></video>
+        <video src="../resources/videos/knockoutclip ‐ Hecho con Clipchamp.mp4" loop autoplay muted poster="../resources/images/evento.jpg"></video>
         <div class="title">DISCOVER</div>
         <hr>
         <article>
@@ -36,7 +53,7 @@
                     <img src="../resources/images/jiripeleador.jpg" alt="">
                     <hr>
                     <h3>WATCH & ENJOY</h3>
-                    <h2>UFC EVENTS ONLINE</h2>
+                    <h2>UFC EVENTS ON LIVE</h2>
                 </a>
             </section>
             <section>
@@ -134,4 +151,5 @@
         </footer>
     </div>
 </body>
+
 </html>
