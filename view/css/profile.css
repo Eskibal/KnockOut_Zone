@@ -57,20 +57,28 @@ nav ul li a:hover {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
     width: 60%;
     margin: 120px auto; /* Adjusted margin to create space from the fixed nav */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 200px;
-    text-align: center;
+    margin-top: 150px;
 }
 
-.container img {
+.container .default-profile {
+    margin-top: -200px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
+}
+
+.container .banner {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
@@ -110,13 +118,13 @@ form input[type="submit"]:hover {
 
 .btn {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 20px;
     background-color: #cb0000;
     color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-left: 20px;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
 
@@ -131,7 +139,7 @@ input[type="file"]::file-selector-button {
     background: linear-gradient(to left top, #000000, #333333);
     color: #ffffff;
     font-size: 15px;
-    margin: 10px 0;
+    margin: 1px 2px;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
@@ -153,6 +161,11 @@ input[type="file"]::file-selector-button:hover {
     color: green;
     font-size: 16px;
     margin-bottom: 10px;
+}
+
+hr {
+    margin-block: 30px 10px;
+    margin-inline: 10%;
 }
 
 /* Responsive Design */

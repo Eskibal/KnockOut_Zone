@@ -43,6 +43,7 @@ if (isset($_SESSION["success"])) {
                 <li><a href="fighters.html">FIGHTERS</a></li>
                 <li><a href="ranking.html">RANKING</a></li>
             </ul>
+            <a href="../controller/logout.php" class="btn">LOG OUT</a>
         </nav>
     </header>
     <main>
@@ -54,24 +55,25 @@ if (isset($_SESSION["success"])) {
                 <p class="success-message"><?php echo htmlspecialchars($success_message); ?></p>
             <?php endif; ?>
 
+            <img src="https://i.redd.it/toouo8vhb1b81.png" alt="" class="banner">
             <?php if (!empty($row["path_pfp"])): ?>
                 <img src="../resources/profiles/<?php echo htmlspecialchars($row["path_pfp"]); ?>" alt="Profile Picture">
             <?php else: ?>
-                <p>No profile picture</p>
-            <?php endif; ?>
-
-            <?php if ($_SESSION["user"] === 'admin'): ?>
-                <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
-                    <input type="file" name="imagen" accept="image/*" required>
-                    <input type="hidden" name="name" value="<?php echo htmlspecialchars($_SESSION['user']); ?>">
-                    <input type="submit" value="Upload Image">
-                </form>
+                <p><img src="../resources/profiles/default-profile.png" alt="" class="default-profile"></p>
             <?php endif; ?>
 
             <h1>Welcome, <?php echo htmlspecialchars($row['name']); ?>!</h1>
-            <p><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></p>
-
-            <a href="../controller/logout.php" class="btn">Log out</a>
+            <?php echo htmlspecialchars($row['email']); ?>
+            <hr>
+            
+            <h2>Change Profile Picture</h2>
+            <?php if ($_SESSION["user"] === 'admin'): ?>
+                <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="imagen" accept="image/*" required>
+                    <input type="hidden" name="name" value="<?php echo htmlspecialchars($_SESSION['user']); ?>"><br>
+                    <input type="submit" value="Upload Image">
+                </form>
+            <?php endif; ?>
         </div>
     </main>
 </body>
