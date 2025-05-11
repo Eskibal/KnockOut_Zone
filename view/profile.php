@@ -9,18 +9,16 @@ $query->execute();
 $result = $query->get_result();
 $row = $result->fetch_assoc();
 
-// Mostrar errores o mensajes
+// Display errors or success messages
 if (isset($_SESSION["error"])) {
-    echo "<p style='color:red'>" . $_SESSION["error"] . "</p>";
+    $error_message = $_SESSION["error"];
     unset($_SESSION["error"]);
 }
 if (isset($_SESSION["success"])) {
-    echo "<p style='color:green'>" . $_SESSION["success"] . "</p>";
+    $success_message = $_SESSION["success"];
     unset($_SESSION["success"]);
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -28,56 +26,54 @@ if (isset($_SESSION["success"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="viewcss/profile.css">
+    <link rel="stylesheet" href="css/profile.css">
     <title>KnockoutZone - Profile</title>
 </head>
 
 <body>
     <header>
         <nav>
-            <a href="userhome.html" id="logo">
-                <img id="logo" src="../images/logo.png" alt="Home">
+            <a href="home.html" class="logo-container">
+                <img src="../resources/images/logolight.png" alt="Knockout Zone Logo">
             </a>
-            <ul class="navul">
-                <li class="navli"><a href="#" class="nava">STORE</a></li>
-            </ul>
-            <ul class="navul">
-                <li class="navli"><a href="#" class="nava">FORUM</a></li>
-            </ul>
-            <ul class="navul">
-                <li class="navli"><a href="#" class="nava">RANKING</a></li>
-            </ul>
-            <ul class="navul">
-                <li class="navli"><a href="#" class="nava">FIGHTERS</a></li>
-            </ul>
-            <ul class="navul">
-                <li class="navli"><a href="knockoutevents.html" class="nava">EVENTS</a></li>
+            <ul class="nav-list">
+                <li><a href="store.html">STORE</a></li>
+                <li><a href="forum.html">FORUM</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="fighters.html">FIGHTERS</a></li>
+                <li><a href="ranking.html">RANKING</a></li>
             </ul>
         </nav>
     </header>
-    <div class="container">
-        <?php
-        if (!empty($row["path_pfp"])) {
-            echo "<img src='../images/profiles/" . $row["path_pfp"] . "' alt='Perfil' style='width:150px; border-radius:50%;'>";
-        } else {
-            echo "<p>No profile picture</p>";
-        }
+    <main>
+        <div class="container">
+            <?php if (isset($error_message)): ?>
+                <p class="error-message"><?php echo htmlspecialchars($error_message); ?></p>
+            <?php endif; ?>
+            <?php if (isset($success_message)): ?>
+                <p class="success-message"><?php echo htmlspecialchars($success_message); ?></p>
+            <?php endif; ?>
 
-        // Formulario solo visible si eres admin
-        if ($_SESSION["user"] === 'admin') {
-            echo '
-    <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="imagen" accept="image/*" required>
-        <input type="hidden" name="name" value="' . $_SESSION['user'] . '">
-        <input type="submit" value="Subir imagen">
-    </form>';
-        }
-        ?>
-        <h1>Welcome, <?php echo $row['name']; ?>!</h1>
-        <p><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></p>
+            <?php if (!empty($row["path_pfp"])): ?>
+                <img src="../images/profiles/<?php echo htmlspecialchars($row["path_pfp"]); ?>" alt="Profile Picture">
+            <?php else: ?>
+                <p>No profile picture</p>
+            <?php endif; ?>
 
-        <a href="../controller/logout.php" class="btn">Log out</a>
-    </div>
+            <?php if ($_SESSION["user"] === 'admin'): ?>
+                <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="imagen" accept="image/*" required>
+                    <input type="hidden" name="name" value="<?php echo htmlspecialchars($_SESSION['user']); ?>">
+                    <input type="submit" value="Upload Image">
+                </form>
+            <?php endif; ?>
+
+            <h1>Welcome, <?php echo htmlspecialchars($row['name']); ?>!</h1>
+            <p><strong>Email:</strong> <?php echo htmlspecialchars($row['email']); ?></p>
+
+            <a href="../controller/logout.php" class="btn">Log out</a>
+        </div>
+    </main>
 </body>
 
 </html>

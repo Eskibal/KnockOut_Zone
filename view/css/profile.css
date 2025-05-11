@@ -1,101 +1,173 @@
 body {
-    font-family: 'Bahnschrift';
-    background-color: #cb0000;
-    padding-block: 20px;
+    font-family: 'Bahnschrift', sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
 }
 
 header {
     max-width: 100%;
-    padding-block-end: 5%;
-    font-weight: bolder;
-    padding-inline: 5%;
 }
 
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
-    background-color: #d9d9d9;
+    background: linear-gradient(to bottom right, #000000, #333333);
     align-items: center;
-    justify-content: center;
-    border-radius: 5px;
+    padding: 10px 20px;
+    width: 100%;
+    z-index: 1000;
 }
 
 a {
     text-decoration: none;
-    color: black;
 }
 
-#logo {
-    display: block;
-    width: 70px;
-    border-radius: 5px;
-    transition: transform 0.4s, background-color 0.4s, box-shadow 0.4s;
+.logo-container img {
+    width: 90px;
+    transition: transform 0.3s;
 }
 
-#logo:hover {
-    transform: scale(0.9);
-    filter: brightness(4);
-    background-color: #ff0000;
-    box-shadow: 7px 4px 1px #00000025;
-    cursor:grabbing;
+.logo-container:hover img {
+    transform: scale(1.1);
 }
 
-ul {
+nav ul {
+    display: flex;
     list-style: none;
-    display: flex;
-    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-.navli {
-    display: flex;
-    flex-direction: column;
+nav ul li {
+    margin: 0 10px;
 }
 
-.nava {
-    transition: color 0.5s, transform 0.5s, font-weight 0.5s;
+nav ul li a {
+    color: #ffffff;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: color 0.3s, transform 0.3s;
 }
 
-.nava:hover {
-    color: red;
-    transform: scale(1.2);
-}
-
-a.nava img {
-    width: auto;
-    position: absolute;
-    margin: -20px;
-    margin-left: auto;
-
-    transition: width 0.4s, margin 0.4s;
+nav ul li a:hover {
+    color: #ff0000;
+    transform: scale(1.1);
 }
 
 .container {
-    background-color: #d9d9d9;
+    background-color: #ffffff;
     padding: 30px;
     border-radius: 10px;
-    width: 80%;
-    margin: auto;
+    width: 60%;
+    margin: 120px auto; /* Adjusted margin to create space from the fixed nav */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 200px;
+    text-align: center;
 }
 
-p {
+.container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333333;
+}
+
+.container p {
     font-size: 18px;
     margin: 10px 0;
+    color: #555555;
+}
+
+form {
+    margin-top: 20px;
+}
+
+form input[type="file"] {
+    margin-bottom: 10px;
+}
+
+form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: white;
-    color: #cb0000;
+    background-color: #cb0000;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     margin-top: 20px;
-    transition: background-color 0.6s, color 0.6s, box-shadow 0.6s;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .btn:hover {
     background-color: #ff0000;
-    box-shadow: 7px 4px 1px #00000025;
-    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+input[type="file"]::file-selector-button {
+    content: 'Choose File';
+    font-family: 'Bahnschrift Light';
+    background: linear-gradient(to left top, #000000, #333333);
+    color: #ffffff;
+    font-size: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
+    transform: scale(1.02);
+}
+
+/* Error and Success Messages */
+.error-message {
+    color: red;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: green;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 8px 10px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+    }
 }
