@@ -109,13 +109,14 @@ hr {
 }
 
 .banner {
-    width: 100%;
+    max-width: 100%;
     height: 30vh;
     margin-top: 8.5%;
     display: flex;
     flex-direction: column;
     max-height: 100vh;
     object-fit: cover;
+    padding-inline: 10%;
     background: linear-gradient(to bottom right, #d80000, #000000);
 }
 
@@ -139,15 +140,17 @@ hr {
     max-width: 100%;
     width: 100%;
     background-color: #ffffff;
-    margin: -10px 50px 10px;
+    margin: -10px 10px 10px;
 }
 
 .forum-posts {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     gap: 20px;
     padding: 20px;
     margin-inline: 10%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .forum-post {
@@ -198,4 +201,23 @@ hr {
 .forum-header {
     display: flex;
     align-items: center;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    background: linear-gradient(to bottom right, #000000, #333333);;
+    color: #ffffff;
+    padding: 20px;
+}
+
+footer a {
+    color: #a8a8a8;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+}
+
+footer a:hover {
+    color: #ff0000;
+    font-weight: bold;
+    transform: scale(1.2);
 }
