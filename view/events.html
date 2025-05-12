@@ -12,7 +12,7 @@
     <div>
         <header>
             <nav>
-                <a href="index.html" class="logo-container">
+                <a href="home.php" class="logo-container">
                     <img class="logo-container" src="../resources/images/logolight.png" alt="Knockout Zone Logo">
                 </a>
                 <ul class="nav-list">
@@ -23,13 +23,7 @@
                     <li><a href="vlogin.php">RANKING</a></li>
                 </ul>
                 <a href="profile.php" class="login-button">
-                    <?php
-                    if (isset($row['user']) && isset($row['path_pfp'])) {
-                        echo '<img src="../resources/profiles/' . htmlspecialchars($row['path_pfp']) . '" alt="Profile Picture">';
-                    } else {
-                        echo '<img src="../resources/profiles/default-profile.png" alt="Default Profile Picture">';
-                        }
-                    ?>
+                    <img src="../resources/profiles/default-profile.png" alt="Default Profile Picture">
                 </a>
             </nav>
         </header>
@@ -46,7 +40,6 @@
                     <p>Sun, May 11 / 4:00 AM GMT+2 / Main Card</p>
                     <span>Bell Centre / Montreal QC, Canada</span>
                 </div>
-                <hr class="divider">
                 <div class="event-button">
                     <a href="https://www.ticketmaster.com/discover/sports">BUY TICKETS</a>
                 </div>
@@ -58,7 +51,6 @@
                     <p>Sat, Jul 26 / 9:00 PM GMT+2 / Main Card</p>
                     <span>Ethiad Arena / Abu Dhabi, UAE</span>
                 </div>
-                <hr class="divider">
                 <div class="event-button">
                     <a href="https://www.ticketmaster.com/discover/sports">BUY TICKETS</a>
                 </div>

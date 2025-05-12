@@ -120,12 +120,21 @@ article {
 .event-item {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between; /* Ensure even spacing between elements */
     background-color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     padding: 30px;
+    gap: 20px; /* Add consistent spacing between child elements */
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+.event-item img {
+    border-radius: 3%;
+    margin-right: 20px;
+    transition: transform 0.3s;
+    flex-shrink: 0; /* Prevent the image from shrinking */
 }
 
 .event-item a {
@@ -134,39 +143,26 @@ article {
     font-size: 20px;
     font-style: italic;
     margin-bottom: 10px;
+    flex-grow: 1; /* Allow the text to grow and take available space */
 }
 
 .event-item span {
     font-size: 13px;
     color: #666;
+    flex-grow: 1; /* Allow the span to grow and take available space */
 }
 
-.event-item img {
-    border-radius: 3%;
-    margin-right: 20px;
-    transition: transform 0.3s;
-}
-
-
-.event-item:hover {
-    transform: scale(1.01);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-
-    img {
-        transform: scale(1.02);
-    }
-}
-
-.event-button {
+.event-button a {
     background: linear-gradient(to bottom right, #000000, #333333);
     color: #ffffff;
-    padding: 10px 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-right: 20px;
-    text-align: justify;
+    text-align: center; /* Center the text inside the button */
     transition: background 0.3s, transform 0.3s;
+    width: 0px;
+    height: 100%;
 }
 
 .event-button:hover {
