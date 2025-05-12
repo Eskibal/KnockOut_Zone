@@ -33,13 +33,13 @@ if (isset($_SESSION["success"])) {
 <body>
     <header>
         <nav>
-            <a href="home.php" class="logo-container">
+            <a href="home.html" class="logo-container">
                 <img src="../resources/images/logolight.png" alt="Knockout Zone Logo">
             </a>
             <ul class="nav-list">
                 <li><a href="store.html">STORE</a></li>
                 <li><a href="forum.html">FORUM</a></li>
-                <li><a href="events.php">EVENTS</a></li>
+                <li><a href="events.html">EVENTS</a></li>
                 <li><a href="fighters.html">FIGHTERS</a></li>
                 <li><a href="ranking.html">RANKING</a></li>
             </ul>
@@ -66,8 +66,8 @@ if (isset($_SESSION["success"])) {
             <?php echo htmlspecialchars($row['email']); ?>
             <hr>
             
-            <h2>Change Profile Picture</h2>
             <?php if ($_SESSION["user"] === 'admin'): ?>
+            <h2>Change Profile Picture</h2>
                 <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
                     <input type="file" name="imagen" accept="image/*" required>
                     <input type="hidden" name="name" value="<?php echo htmlspecialchars($_SESSION['user']); ?>"><br>

@@ -96,7 +96,7 @@ nav ul li a:hover {
     object-fit: cover;
 }
 
-hr {
+.d {
     max-width: 100%;
     width: 70%
 }
@@ -118,23 +118,25 @@ article {
 }
 
 .event-item {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.5fr 1fr;
     align-items: center;
-    justify-content: space-between; /* Ensure even spacing between elements */
     background-color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     padding: 30px;
-    gap: 20px; /* Add consistent spacing between child elements */
     flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+.event-info {
+    display: block;
 }
 
 .event-item img {
     border-radius: 3%;
-    margin-right: 20px;
     transition: transform 0.3s;
-    flex-shrink: 0; /* Prevent the image from shrinking */
+    margin-right: 50px;
 }
 
 .event-item a {
@@ -143,7 +145,6 @@ article {
     font-size: 20px;
     font-style: italic;
     margin-bottom: 10px;
-    flex-grow: 1; /* Allow the text to grow and take available space */
 }
 
 .event-item span {
@@ -152,26 +153,25 @@ article {
     flex-grow: 1; /* Allow the span to grow and take available space */
 }
 
-.event-button a {
+.event-button {
     background: linear-gradient(to bottom right, #000000, #333333);
     color: #ffffff;
     border: none;
     border-radius: 5px;
+    padding-block: 15px 0;
     cursor: pointer;
-    margin-right: 20px;
-    text-align: center; /* Center the text inside the button */
+    text-align: center;
     transition: background 0.3s, transform 0.3s;
-    width: 0px;
-    height: 100%;
+    max-width: 90%;
+    height: 40px;
 }
 
 .event-button:hover {
-    background: linear-gradient(to bottom right, #0091ff, #5c5c5c);
+    background: linear-gradient(to bottom right, #ff0f0f, #929292);
     transform: scale(1.05);
 }
 
 .divider {
-    width: 0.05%;
+    width: 0;
     height: 150px;
-    margin: 0px 60px 0px 60px;
 }
