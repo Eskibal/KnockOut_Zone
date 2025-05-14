@@ -49,7 +49,7 @@ class UserController
     public function logout(): void
     {
         session_destroy();
-        header(header: "Location:../view/vlogin.php");
+        header(header: "Location:../view/index.html");
         exit();
     }
 
