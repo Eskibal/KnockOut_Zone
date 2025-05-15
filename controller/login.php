@@ -32,12 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: ../view/profile.php");
             exit();
         } else {
-            echo "Email o contraseña incorrectos.";
+            $_SESSION["error"] = "Email o contraseña incorrectos.";
+            header("Location: ../view/vlogin.php");
             exit();
         }
-
     } catch (PDOException $e) {
         echo "Error en el login: " . $e->getMessage();
     }
 }
-?>

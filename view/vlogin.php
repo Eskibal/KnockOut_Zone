@@ -17,7 +17,9 @@ unset($_SESSION["error"]);
 <body>
     <div class="form-container">
         <?php if ($error): ?>
-            <p style="color: red; text-align: center; font-weight: bold;"><?= $error ?></p>
+            <p style="color: red; text-align: center; font-weight: bold; margin-top: 10px;">
+                <?= htmlspecialchars($error) ?>
+            </p>
         <?php endif; ?>
         <h1>LOG IN</h1>
         <form action="../controller/login.php" method="POST">
