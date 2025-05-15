@@ -1,7 +1,7 @@
 <?php
 session_start();
 $conn = new mysqli("localhost", "root", "", "knockoutzone");
-$user = $_SESSION["user"];
+$user = $_SESSION["user_name"];
 
 $query = $conn->prepare("SELECT * FROM users WHERE name = ?");
 $query->bind_param("s", $user);
@@ -67,7 +67,7 @@ if (isset($_SESSION["success"])) {
             <?php echo htmlspecialchars($row['email']); ?>
             <hr>
             
-            <?php if ($_SESSION["user"] === 'admin'): ?>
+            <?php if ($_SESSION["user_name"] === 'admin'): ?>
             <h2>Change Profile Picture</h2>
                 <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
                     <input type="file" name="imagen" accept="image/*" required>

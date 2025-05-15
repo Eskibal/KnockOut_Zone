@@ -23,8 +23,8 @@ unset($_SESSION["error"]);
         <form action="../controller/login.php" method="POST">
             <hr>
             <input type="hidden" name="login" value="1">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="knockout_user" required>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="user@gmail.com" required>
 
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="123ABC.." required>
