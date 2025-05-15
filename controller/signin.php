@@ -22,7 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->execute([$email]);
         if ($stmt->fetch()) {
-            echo "Este email ya está registrado.";
+            $_SESSION['error'] = "Este email ya está registrado.";
+            header("Location: ../view/vregister.php");
             exit();
         }
 
@@ -40,4 +41,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Error en el registro: " . $e->getMessage();
     }
 }
-?>

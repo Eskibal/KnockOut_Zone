@@ -66,9 +66,23 @@ if (isset($_SESSION["success"])) {
             <h1>Welcome, <?php echo htmlspecialchars($row['name']); ?>!</h1>
             <?php echo htmlspecialchars($row['email']); ?>
             <hr>
-            
+
+            <h2>Update Your Information</h2>
+            <form action="../controller/update_user.php" method="POST">
+                <label for="name">New Username:</label>
+                <input type="text" name="name" id="name" value="<?= htmlspecialchars($row['name']) ?>" required>
+
+                <label for="email">New Email:</label>
+                <input type="email" name="email" id="email" value="<?= htmlspecialchars($row['email']) ?>" required>
+
+                <input type="submit" value="Update Info">
+            </form>
+
+            <hr>
+
+
             <?php if ($_SESSION["user_name"] === 'admin'): ?>
-            <h2>Change Profile Picture</h2>
+                <h2>Change Profile Picture</h2>
                 <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
                     <input type="file" name="imagen" accept="image/*" required>
                     <input type="hidden" name="name" value="<?php echo htmlspecialchars($_SESSION['user']); ?>"><br>
