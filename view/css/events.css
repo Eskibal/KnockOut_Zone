@@ -63,7 +63,7 @@ nav ul li a:hover {
     width: 1%;
     padding: 10px 20px;
     margin-left: 50px;
-    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
 
 .login-button img {
@@ -75,6 +75,7 @@ nav ul li a:hover {
 .login-button:hover {
     color: #ff0000;
     font-weight: bold;
+    box-shadow: 6px 4px 9px #ffffffff;
     transform: scale(1.2);
 }
 

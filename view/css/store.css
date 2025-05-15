@@ -86,6 +86,7 @@ nav ul li a:hover {
     max-width: 100%;
     width: 1%;
     padding: 10px 20px;
+    border-radius: 50px;
     margin-left: 50px;
     transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
@@ -118,7 +119,7 @@ hr {
     max-height: 100vh;
     object-fit: cover;
     padding-inline: 10%;
-    background: linear-gradient(to bottom right, #d80000, #000000);
+    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
 }
 
 .banner h2 {
@@ -144,81 +145,105 @@ hr {
     margin: -10px 10px 10px;
 }
 
-.forum-posts {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 20px;
-    padding: 20px;
-    margin-inline: 10%;
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     margin-top: 2%;
-    margin-bottom: 2%;
 }
 
-.forum-post {
+.product-item {
     display: flex;
-    background-color: #f9f9f9;
+    flex-direction: column;
+    background-color: #ffffff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
     transition: transform 0.3s;
 }
 
-.forum-post img {
-    width: 70px;
-    height: 70px;
-    border-radius: 100px;
-    margin-right: 15px;
+.product-item:hover  img {
+    transform: scale(1.05);
 }
 
-.forum-post:hover {
-    transform: scale(1.01);
-}
-
-.username {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #333;
-}
-
-.post-content {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.timestamp {
-    font-size: 0.8em;
-    color: #999;
-}
-
-.forum-info hr {
-    max-width: 100%;
-    width: 70%;
-    background-color: #999;
-    margin-top: -10px;
-}
-
-.forum-header {
+.add-cart {
+    font-family: 'Bahnschrift Light';
+    font-size: 20px;
+    font-style: italic;
+    background: linear-gradient(to bottom right, #000000, #333333);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
     display: flex;
     align-items: center;
+    transition: background 0.3s, transform 0.3s, padding 0.3s;
+    height: 40px;
 }
 
-footer {
-    display: grid;
-    grid-template-columns: repeat(3, 20%);
-    background: linear-gradient(to bottom right, #000000, #333333);;
-    color: #ffffff;
-    padding: 20px;
+.add-cart span {
+    font-size: 0px;
+    transition: font-size 0.3s;
+    margin-inline: -5px;
 }
 
-footer a {
-    color: #a8a8a8;
-    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+.add-cart:hover {
+    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
+    transform: scale(1.03);
+    padding-inline: 0px 30px;
+    
+    span {
+        font-size: 20px;
+    }
 }
 
-footer a:hover {
-    color: #ff0000;
+.add-cart img {
+    width: 50px;
+    height: 20px;
+    margin-inline: -5px 5px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0 10px 30px;
+    font-size: 18px;
+    z-index: 10;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 8px rgba(0,0,0,0.07);
+}
+
+.filter-container label {
     font-weight: bold;
-    transform: scale(1.2);
+    color: #00b7c4;
+}
+
+#type-filter {
+    font-family: 'Bahnschrift Light';
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #00b7c4;
+    font-size: 16px;
+    background: #fff;
+    color: #00b7c4;
+    transition: border 0.2s;
+}
+
+#type-filter:focus {
+    outline: none;
+    border: 2px solid #000;
 }

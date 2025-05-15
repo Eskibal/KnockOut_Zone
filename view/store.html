@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store - Knockout Zone</title>
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="shortcut icon" href="../resources/images/logolightbig.png" type="image/x-icon" sizes="16x16">
+</head>
+
+<body>
+    <div>
+        <header>
+            <nav>
+                <a href="home.html" class="logo-container">
+                    <img class="logo-container" src="../resources/images/logolight.png" alt="Knockout Zone Logo">
+                </a>
+                <ul class="nav-list">
+                    <li class="current">STORE</li>
+                    <li><a href="forum.html">FORUM</a></li>
+                    <li><a href="events.html">EVENTS</a></li>
+                    <li><a href="fighters.html">FIGHTERS</a></li>
+                    <li><a href="ranking.html">RANKING</a></li>
+                </ul>
+                <a href="profile.php" class="login-button">
+                    <img src="../resources/profiles/default-profile.png" alt="Default Profile Picture">
+                </a>
+            </nav>
+        </header>
+        <hr>
+        <div class="banner">
+            <h2>KNOCKOUT Store</h2>
+            <hr>
+            <p>Shop the latest gear and merchandise!</p>
+        </div>
+        <hr>
+        <div class="filter-container">
+            <label for="type-filter">Filter by :</label>
+            <select id="type-filter">
+                <option value="all">ALL</option>
+                <option value="equipment">EQUIPMENT</option>
+                <option value="clothes">CLOTHES</option>
+                <option value="accessories">ACCESSORIES</option>
+            </select>
+        </div>
+        <article class="catalog">
+            <section class="product-item" data-type="equipment">
+                <img src="https://images.footballfanatics.com/ufc-merchandise/mens-ufc-black-official-pro-fight-gloves_ss5_p-200966595+u-vwzielguzpbqpzqg9cfk+v-4wspmw5mkeleozvp2b3v.jpg?_hv=2&w=400"
+                    alt="UFC Gloves">
+                <hr>
+                <div class="product-info">
+                    <h2>UFC GLOVES</h2>
+                    <p>Price: $25.99 / <span>Size: M, L</span></p>
+                    <button class="add-cart">
+                        <img src="../resources/images/shop/cart.png" alt="">
+                        <span>Add to cart</span>
+                    </button>
+                </div>
+            </section>
+            <section class="product-item" data-type="clothes">
+                <img src="">
+                <hr>
+                <div class="product-info">
+                    <h2>UFC T-SHIRT</h2>
+                    <p>Price: $20.50 / <span>Size: S, M, L, XL</span></p>
+                    <button class="add-cart">
+                        <img src="../resources/images/shop/cart.png" alt="">
+                        <span>Add to cart</span>
+                    </button>
+                </div>
+            </section>
+        </article>
+        <script src="js/store.js"></script>
+    </div>
+</body>
+
+</html>
