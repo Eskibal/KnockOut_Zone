@@ -12,9 +12,21 @@
 <body>
     <div class="form-container">
         <h1>ADMIN REGISTER</h1>
+        <?php
+        session_start();
+        if (isset($_SESSION["error"])) {
+            echo '<p style="color:red; text-align:center; font-weight:bold;">' . $_SESSION["error"] . '</p>';
+            unset($_SESSION["error"]);
+        }
+        if (isset($_SESSION["success"])) {
+            echo '<p style="color:green; text-align:center; font-weight:bold;">' . $_SESSION["success"] . '</p>';
+            unset($_SESSION["success"]);
+        }
+        ?>
+
         <form action="../controller/signadmin.php" method="POST" enctype="multipart/form-data">
-        <hr>    
-        <input type="hidden" name="register" value="1">
+            <hr>
+            <input type="hidden" name="register" value="1">
             <label for="email">Email *</label>
             <input type="email" name="email" id="email" placeholder="admin@email.com" required>
             <div class="label-group">
@@ -27,7 +39,8 @@
             </div>
             <label for="pfp">Profile Picture (optional)</label>
             <input type="file" name="pfp" id="pfp" accept="image/*">
-            <input type="submit" value="Register"><hr>
+            <input type="submit" value="Register">
+            <hr>
             <div class="form-options">
                 Got an account? <a href="vlogin.php"> Log in!</a>
                 <br>Become a <a href="vregister.php">Knockout User!</a></br>
