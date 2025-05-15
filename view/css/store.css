@@ -247,3 +247,21 @@ hr {
     outline: none;
     border: 2px solid #000;
 }
+footer {
+    display: grid;
+    grid-template-columns: repeat(3, 20%);
+    background: linear-gradient(to bottom right, #000000, #333333);;
+    color: #ffffff;
+    padding: 20px;
+}
+
+footer a {
+    color: #a8a8a8;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+}
+
+footer a:hover {
+    color: #ff0000;
+    font-weight: bold;
+    transform: scale(1.2);
+}
