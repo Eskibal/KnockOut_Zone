@@ -76,7 +76,7 @@ h1 {
 
 .members {
     display: grid;
-    grid-template-columns: 8fr 8fr;
+    grid-template-columns: 8fr 8fr 8fr;
     gap: 20px;
     margin-inline: 10%;
     padding: 50px;
