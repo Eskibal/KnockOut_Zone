@@ -79,16 +79,33 @@ if (isset($_SESSION["success"])) {
             </form>
 
             <hr>
+            <h2>Change Password</h2>
+            <form action="../controller/update_password.php" method="POST">
+                <label for="current_password">Current Password:</label>
+                <input type="password" name="current_password" id="current_password" required>
 
+                <label for="new_password">New Password:</label>
+                <input type="password" name="new_password" id="new_password" required>
+
+                <input type="submit" value="Change Password">
+            </form>
+
+            <hr>
 
             <?php if ($_SESSION["user_name"] === 'admin'): ?>
                 <h2>Change Profile Picture</h2>
                 <form action="../controller/subir_imagen.php" method="POST" enctype="multipart/form-data">
                     <input type="file" name="imagen" accept="image/*" required>
-                    <input type="hidden" name="name" value="<?php echo htmlspecialchars($_SESSION['user']); ?>"><br>
+                    <input type="hidden" name="name" value="<?php echo htmlspecialchars($_SESSION['user_name']); ?>"><br>
                     <input type="submit" value="Upload Image">
                 </form>
             <?php endif; ?>
+            <hr>
+            <h2>Delete Account</h2>
+            <form action="../controller/delete_user.php" method="POST" onsubmit="return confirm('¿Estás seguro de que quieres eliminar tu cuenta? Esta acción no se puede deshacer.');">
+                <input type="submit" value="Delete My Account" style="background-color: red; color: white;">
+            </form>
+
         </div>
     </main>
 </body>

@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ? AND id != ?");
         $stmt->execute([$newEmail, $userId]);
         if ($stmt->fetch()) {
-            $_SESSION["error"] = "Ese email ya está en uso por otro usuario.";
+            $_SESSION["error_update"] = "Ese email ya está en uso.";
             header("Location: ../view/profile.php");
             exit();
         }
@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION['user_name'] = $newName;
         $_SESSION['user_email'] = $newEmail;
 
-        $_SESSION["success"] = "Datos actualizados correctamente.";
+        $_SESSION["success_update"] = "Datos actualizados correctamente.";
         header("Location: ../view/profile.php");
         exit();
     } catch (PDOException $e) {
