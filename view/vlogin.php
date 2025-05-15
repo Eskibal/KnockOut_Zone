@@ -17,14 +17,16 @@ unset($_SESSION["error"]);
 <body>
     <div class="form-container">
         <?php if ($error): ?>
-            <p style="color: red; text-align: center; font-weight: bold;"><?= $error ?></p>
+            <p style="color: red; text-align: center; font-weight: bold; margin-top: 10px;">
+                <?= htmlspecialchars($error) ?>
+            </p>
         <?php endif; ?>
         <h1>LOG IN</h1>
         <form action="../controller/login.php" method="POST">
             <hr>
             <input type="hidden" name="login" value="1">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="knockout_user" required>
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" placeholder="user@gmail.com" required>
 
             <label for="password">Password</label>
             <input type="password" name="password" id="password" placeholder="123ABC.." required>
