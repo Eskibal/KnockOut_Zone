@@ -97,3 +97,10 @@ h1 {
 .members aside h1 {
     color: #ffffff;
 }
+
+.members aside img {
+    max-width: 70%;
+    height: auto;
+    border-radius: 30%;
+    margin-bottom: 20px;
+}
