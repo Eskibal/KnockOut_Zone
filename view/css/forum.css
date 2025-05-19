@@ -15,6 +15,7 @@ nav {
     justify-content: center;
     padding: 10px 0;
     width: 100%;
+    z-index: 1000;
 }
 
 a {
@@ -99,7 +100,6 @@ nav ul li a:hover {
 .login-button:hover {
     color: #ff0000;
     font-weight: bold;
-    box-shadow: 6px 4px 9px #ffffffff;
     transform: scale(1.2);
 }
 

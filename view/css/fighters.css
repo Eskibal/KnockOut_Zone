@@ -60,9 +60,17 @@ nav ul li a:hover {
 .login-button {
     color: #ffffff;
     font-size: 20px;
+    max-width: 100%;
+    width: 1%;
     padding: 10px 20px;
-    margin-left: 20px;
-    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+    margin-left: 50px;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
+}
+
+.login-button img {
+    width: 20px;
+    height: 20px;
+    transform: scale(3);
 }
 
 .login-button:hover {
@@ -81,30 +89,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-.login-button {
-    color: #ffffff;
-    font-size: 20px;
-    max-width: 100%;
-    width: 1%;
-    padding: 10px 20px;
-    border-radius: 50px;
-    margin-left: 50px;
-    transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
-}
-
-.login-button img {
-    width: 20px;
-    height: 20px;
-    transform: scale(3);
-}
-
-.login-button:hover {
-    color: #ff0000;
-    font-weight: bold;
-    box-shadow: 6px 4px 9px #ffffffff;
-    transform: scale(1.2);
-}
-
 hr {
     border: 0;
     height: 1px;
@@ -120,7 +104,7 @@ hr {
     max-height: 100vh;
     object-fit: cover;
     padding-inline: 10%;
-    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
+    background: linear-gradient(to bottom right, #d80000, #000000);
 }
 
 .banner h2 {
@@ -146,112 +130,141 @@ hr {
     margin: -10px 10px 10px;
 }
 
-.catalog {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2%;
+.fighter-profiles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    margin-inline: 5%;
+    gap: 80px;
 }
 
-.product-item {
+.fighter-profile {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to bottom left, #666, #000000);
+    width: 100%;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.fighter-profile img {
+    width: 50%;
+    margin: 0;
+}
+
+.profile-header {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 10px;
-    width: 300px;
-}
-
-.product-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 5px;
-    transition: transform 0.3s;
-}
-
-.product-item:hover  img {
-    transform: scale(1.05);
-}
-
-.add-cart {
-    font-family: 'Bahnschrift Light';
     font-size: 20px;
+}
+
+.fighter-profile h2 {
+    margin: 0;
+}
+
+.fighter-profile sup {
+    color:#ff0000;
     font-style: italic;
+}
+
+.fighter-profile sub {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.show {
+    display: block;
+    background: linear-gradient(to bottom right, #000000, #333333);
+    padding: 8px;
+    color : #ffffff;
+    font-size: 19px;
+    font-family: 'Bahnschrift Light';
+    font-style: italic;
+    border-radius: 5px;
+    border: 0px;
+    margin-block-start: 20px;
+    transition: background 0.3s, transform 0.3s;
+    cursor: pointer;
+}
+
+.show:hover {
+    background: linear-gradient(to bottom right, #ff0000, #333333);
+    transform: scale(1.03);
+}
+
+.fighter-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    right: 0px;
+    top: 200px;
+    max-height: 0px;
+    opacity: 0;
+    background: linear-gradient(to bottom right, #222, #000);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px #00000066;
+    padding: 20px;
+    padding-bottom: 120px;
+    pointer-events: none;
+    z-index: 1;
+    transition: max-height 0.5s ease, top 0.5s ease, opacity 0.5s ease;
+}
+
+.fighter-info.active {
+    max-height: 500px;
+    pointer-events: auto;
+    z-index: 1;
+    top: 205px;
+    opacity: 1;
+}
+
+.fighter-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 20px;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     background: linear-gradient(to bottom right, #000000, #333333);
     color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    transition: background 0.3s, transform 0.3s, padding 0.3s;
-    height: 40px;
+    padding:20px;
+    border-radius: 20px;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
-.add-cart span {
-    font-size: 0px;
-    transition: font-size 0.3s;
-    margin-inline: -5px;
+.stat h3 {
+    color: #ff0000;
+    font-style: italic;
 }
 
-.add-cart:hover {
-    background: linear-gradient(to right bottom, #00b7c4, #004d5d);
-    transform: scale(1.03);
-    padding-inline: 0px 30px;
-    
-    span {
-        font-size: 20px;
-    }
+.stat p {
+    margin: 5px;
+    font-size: 20px;
 }
 
-.add-cart img {
-    width: 50px;
-    height: 20px;
-    margin-inline: -5px 5px;
+.stat h2 {
+    border: #ff0000 solid;
+    border-inline: 0px;
+    border-top: 0px;
+    font-style: italic;
+    margin-bottom: 10px;
+    padding-inline: 10px;
+    padding-block: 5px;
 }
 
-.filter-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 30px 0 10px 30px;
-    font-size: 18px;
-    z-index: 10;
-    background: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    box-shadow: 0 8px 8px rgba(0,0,0,0.07);
-}
-
-.filter-container label {
-    font-weight: bold;
-    color: #00b7c4;
-}
-
-#type-filter {
-    font-family: 'Bahnschrift Light';
-    padding: 6px 12px;
-    border-radius: 5px;
-    border: 1px solid #00b7c4;
-    font-size: 16px;
-    background: #fff;
-    color: #00b7c4;
-    transition: border 0.2s;
-}
-
-#type-filter:focus {
-    outline: none;
-    border: 2px solid #000;
-}
 footer {
+    margin-top: 400px;
     display: grid;
     grid-template-columns: repeat(3, 20%);
-    background: linear-gradient(to bottom right, #000000, #333333);;
+    background: linear-gradient(to bottom right, #000000, #333333);
     color: #ffffff;
     padding: 20px;
 }
