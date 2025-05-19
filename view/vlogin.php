@@ -11,7 +11,7 @@ unset($_SESSION["error"]);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Knockout Zone</title>
     <link rel="stylesheet" href="css/login.css">
-    <link rel="shortcut icon" href="../resources/images/logolightbig.png" type="image/x-icon" sizes="16x16">
+    <link rel="icon" href="../resources/images/logolightbig.png" sizes="256x256">
 </head>
 
 <body>
