@@ -42,7 +42,6 @@ if (isset($_SESSION["success"])) {
                 <li><a href="forum.html">FORUM</a></li>
                 <li><a href="events.html">EVENTS</a></li>
                 <li><a href="fighters.html">FIGHTERS</a></li>
-                <li><a href="ranking.html">RANKING</a></li>
             </ul>
             <a href="../controller/logout.php" class="btn">LOG OUT</a>
         </nav>

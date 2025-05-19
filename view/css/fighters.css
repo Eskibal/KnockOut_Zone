@@ -180,7 +180,7 @@ hr {
     background: linear-gradient(to bottom right, #000000, #333333);
     padding: 8px;
     color : #ffffff;
-    font-size: 19px;
+    font-size: 25px;
     font-family: 'Bahnschrift Light';
     font-style: italic;
     border-radius: 5px;
@@ -237,7 +237,7 @@ hr {
     color: #ffffff;
     padding:20px;
     border-radius: 20px;
-    transition: transform 0.3s, background-color 0.3s;
+    transition: background-color 0.3s;
 }
 
 .stat h3 {
