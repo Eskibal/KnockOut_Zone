@@ -104,3 +104,99 @@ h1 {
     border-radius: 30%;
     margin-bottom: 20px;
 }
+
+/* Móviles */
+@media (max-width: 678px) {
+    body {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+    .aboutus-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+    }
+    .aboutus-section,
+    .aboutus-team {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 16px;
+        padding: 10px 0;
+        box-sizing: border-box;
+    }
+    .team-list {
+        flex-direction: column;
+        gap: 16px;
+    }
+    .team-member {
+        width: 100%;
+        margin-bottom: 16px;
+        text-align: center;
+    }
+    .team-member img {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 8px auto;
+    }
+}
+
+/* Tablets */
+@media (min-width: 679px) and (max-width: 992px) {
+    body {
+        font-size: 16px;
+    }
+    .aboutus-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+    .aboutus-section {
+        width: 60%;
+    }
+    .aboutus-team {
+        width: 35%;
+        max-width: 250px;
+    }
+    .team-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .team-member {
+        width: 48%;
+        margin-bottom: 16px;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 993px) {
+    body {
+        font-size: 18px;
+    }
+    .aboutus-container {
+        flex-direction: row;
+        gap: 32px;
+    }
+    .aboutus-section {
+        width: 65%;
+    }
+    .aboutus-team {
+        width: 30%;
+        max-width: 300px;
+    }
+    .team-list {
+        flex-direction: row;
+        gap: 24px;
+    }
+    .team-member {
+        width: 45%;
+        margin-bottom: 24px;
+    }
+}
+
+/* Imágenes fluidas */
+.team-member img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}

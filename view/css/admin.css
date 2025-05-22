@@ -114,3 +114,36 @@ hr {
     justify-content: center;
     margin-block: 5%;
 }
+
+/* Pantallas muy grandes (1440px y superiores) */
+@media screen and (min-width: 1440px) {
+    body {
+        font-size: 18px;
+    }
+ 
+    nav {
+        width: 100%;
+    }
+}
+
+/* Telefonos (max 678px) */
+@media screen and (max-width: 678px) {
+    body {
+        display: flex;
+        font-size: 12px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .form-container {
+        margin-right: 0;
+        padding: 10%;
+    }
+}
+
+/* Tablets y Pantallas medianas (max 1440px) */
+@media screen and (max-width: 1440px) {
+    body {
+        font-size: 16px;
+    }
+}

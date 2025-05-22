@@ -168,19 +168,92 @@ hr {
     margin-inline: 10%;
 }
 
-/* Responsive Design */
-@media screen and (max-width: 768px) {
+/* Pantallas muy grandes (1440px y superiores) */
+@media screen and (min-width: 1440px) {
+    body {
+        font-size: 18px;
+    }
+ 
+    nav {
+        width: 100%;
+    }
+}
+
+/* Telefonos (max 678px) */
+@media screen and (max-width: 678px) {
+    body {
+        font-size: 12px;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+    }
+
+    video {
+        display: none;
+    }
+
+    nav ul li a  {
+        font-size: 20px;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+    nav ul {
+        gap: 5px;
+    }
+
     .container {
-        width: 90%;
-        padding: 20px;
+        margin-top: 200px;
     }
 
-    nav ul li a {
+    .banner {
+        display: none;
+    }
+
+    .default-profile {
+        width: 100px;
+    }
+}
+
+/* Tablets y Pantallas medianas (max 1440px) */
+@media screen and (max-width: 1440px) {
+    body {
         font-size: 16px;
-        padding: 8px 10px;
     }
 
-    .btn {
-        padding: 8px 15px;
+    nav {
+        width: 100%;
+    }
+    nav ul li a  {
+        font-size: 20px;
+    }
+    nav ul li {
+        margin: 0 5px;
+    }
+    nav ul {
+        gap: 5px;
+    }
+
+    .login-button {
+        font-size: 20px;
+        padding: 5px 10px;
+        margin-left: 8%;        
+    }
+
+    article {
+        padding: 10px;
+    }
+    
+    footer {
+        grid-template-columns: repeat(1, 100%);
+        padding: 40px;
+        font-size: 18px;
+    }
+    footer a:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s, color 0.3s, font-weight 0.3s;
     }
 }

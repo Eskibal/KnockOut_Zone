@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ingresos>
+    <ingreso tipo="publicidad">
+        <fecha>2025-01-01</fecha>
+        <monto>1000.00</monto>
+        <descripcion>Ingreso por publicidad en el sitio web</descripcion>
+    </ingreso>
+</ingresos>
