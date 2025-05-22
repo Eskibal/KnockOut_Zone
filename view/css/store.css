@@ -196,8 +196,8 @@ hr {
 .add-cart span {
     opacity: 0;
     margin-inline: -5px;
-    font-size: 20px;
-    transition: opacity 0.5s ease-in-out;
+    font-size: 0px;
+    transition: opacity 0.5s ease-in-out, font-size 0.5s ease-in-out;
 }
 
 .add-cart:hover {
@@ -207,6 +207,7 @@ hr {
     
     span {
         opacity: 1;
+        font-size: 20px;
     }
 }
 
