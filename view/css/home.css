@@ -8,20 +8,13 @@ header {
 }
 
 nav {
-<<<<<<< HEAD
-=======
     top: 0;
->>>>>>> 3803946 (commit)
     position: fixed;
     display: flex;
     background: linear-gradient(to bottom right, #000000, #333333);
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
-    padding: 10px 0;
-=======
     padding: 20px 0;
->>>>>>> 3803946 (commit)
     width: 100%;
     z-index: 1000;
 }
@@ -71,14 +64,9 @@ nav ul li a:hover {
     max-width: 100%;
     width: 1%;
     padding: 10px 20px;
-<<<<<<< HEAD
-    margin-left: 50px;
-    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
-=======
     border-radius: 50px;
     margin-left: 50px;
     transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
->>>>>>> 3803946 (commit)
 }
 
 .login-button img {
@@ -90,20 +78,6 @@ nav ul li a:hover {
 .login-button:hover {
     color: #ff0000;
     font-weight: bold;
-<<<<<<< HEAD
-    transform: scale(1.2);
-}
-
-
-video {
-    width: 100%;
-    height: auto;
-    margin-top: 8%;
-    max-height: 100vh;
-    object-fit: cover;
-}
-
-=======
     box-shadow: 6px 4px 9px #ffffffff;
     transform: scale(1.2);
 }
@@ -248,7 +222,6 @@ video {
 .banner-arrow.left { left: 20px; }
 .banner-arrow.right { right: 20px; }
 
->>>>>>> 3803946 (commit)
 hr {
     max-width: 100%;
     width: 70%
@@ -258,11 +231,7 @@ hr {
     font-size: 60px;
     font-family: Bahnschrift SemiBold;
     text-align: center;
-<<<<<<< HEAD
-    margin-top: 20px;
-=======
     font-style: italic;
->>>>>>> 3803946 (commit)
 }
 
 article {
@@ -328,12 +297,8 @@ section a span {
 }
 
 section a:hover span {
-<<<<<<< HEAD
-    color: #666;;
-=======
     color: #666;
     ;
->>>>>>> 3803946 (commit)
 }
 
 section a hr {
@@ -363,12 +328,8 @@ aside section span {
 footer {
     display: grid;
     grid-template-columns: repeat(3, 20%);
-<<<<<<< HEAD
-    background: linear-gradient(to bottom right, #000000, #333333);;
-=======
     background: linear-gradient(to bottom right, #000000, #333333);
     ;
->>>>>>> 3803946 (commit)
     color: #ffffff;
     padding: 20px;
 }
@@ -389,11 +350,6 @@ footer a:hover {
     body {
         font-size: 18px;
     }
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> 3803946 (commit)
     nav {
         width: 100%;
     }
@@ -411,8 +367,6 @@ footer a:hover {
         position: relative;
     }
 
-<<<<<<< HEAD
-=======
     .banner {
         height: 200px;
     }
@@ -423,19 +377,10 @@ footer a:hover {
         font-size: 1rem;
     }
 
->>>>>>> 3803946 (commit)
     video {
         display: none;
     }
 
-<<<<<<< HEAD
-    nav ul li a  {
-        font-size: 20px;
-    }
-    nav ul li {
-        margin: 0 5px;
-    }
-=======
     nav ul li a {
         font-size: 20px;
     }
@@ -444,7 +389,6 @@ footer a:hover {
         margin: 0 5px;
     }
 
->>>>>>> 3803946 (commit)
     nav ul {
         flex-direction: column;
         gap: 5px;
@@ -453,43 +397,20 @@ footer a:hover {
     .login-button {
         font-size: 20px;
         padding: 5px 10px;
-<<<<<<< HEAD
-        margin-left: 8%;        
-=======
         margin-left: 8%;
->>>>>>> 3803946 (commit)
     }
 
     article {
         padding: 50px;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 3803946 (commit)
     section {
         width: 100%;
         padding: 10px;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 3803946 (commit)
     section a img {
         width: 100%;
         height: auto;
     }
-<<<<<<< HEAD
-    section a h3 {
-        font-size: 12px;
-    }
-    section a h2 {
-        font-size: 16px;
-    }
-    section a span {
-        font-size: 14px;
-    }
-=======
 
     section a h3 {
         font-size: 12px;
@@ -503,25 +424,16 @@ footer a:hover {
         font-size: 14px;
     }
 
->>>>>>> 3803946 (commit)
     aside {
         width: 100%;
         padding: 10px;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 3803946 (commit)
     footer {
         grid-template-columns: repeat(1, 100%);
         padding: 10px;
         font-size: 18px;
         text-align: center;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 3803946 (commit)
     footer a:hover {
         transform: scale(1.1);
         transition: transform 0.3s, color 0.3s, font-weight 0.3s;
@@ -537,14 +449,6 @@ footer a:hover {
     nav {
         width: 100%;
     }
-<<<<<<< HEAD
-    nav ul li a  {
-        font-size: 20px;
-    }
-    nav ul li {
-        margin: 0 5px;
-    }
-=======
 
     nav ul li a {
         font-size: 20px;
@@ -554,7 +458,6 @@ footer a:hover {
         margin: 0 5px;
     }
 
->>>>>>> 3803946 (commit)
     nav ul {
         gap: 5px;
     }
@@ -562,36 +465,19 @@ footer a:hover {
     .login-button {
         font-size: 20px;
         padding: 5px 10px;
-<<<<<<< HEAD
-        margin-left: 8%;        
-=======
         margin-left: 8%;
->>>>>>> 3803946 (commit)
     }
 
     article {
         padding: 10px;
     }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 3803946 (commit)
     footer {
         grid-template-columns: repeat(1, 100%);
         padding: 40px;
         font-size: 18px;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> 3803946 (commit)
     footer a:hover {
         transform: scale(1.1);
         transition: transform 0.3s, color 0.3s, font-weight 0.3s;
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 3803946 (commit)

@@ -189,11 +189,7 @@ hr {
     text-align: center;
     display: flex;
     align-items: center;
-<<<<<<< HEAD
-    transition: background 0.5s, transform 0.5s, padding 0.5s;
-=======
     transition: background 0.5s, transform 0.3s, padding 0.3s;
->>>>>>> 3803946 (commit)
     height: 40px;
 }
 
@@ -201,11 +197,7 @@ hr {
     opacity: 0;
     margin-inline: -5px;
     font-size: 0px;
-<<<<<<< HEAD
-    transition: opacity 0.5s ease-in-out, font-size 0.5s ease-in-out;
-=======
     transition: opacity 0.3s, font-size 0.3s;
->>>>>>> 3803946 (commit)
 }
 
 .add-cart:hover {
@@ -264,10 +256,7 @@ footer {
     background: linear-gradient(to bottom right, #000000, #333333);;
     color: #ffffff;
     padding: 20px;
-<<<<<<< HEAD
-=======
     margin-top: 2%;
->>>>>>> 3803946 (commit)
 }
 
 footer a {
