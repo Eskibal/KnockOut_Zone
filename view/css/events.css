@@ -63,6 +63,10 @@ nav ul li a:hover {
     max-width: 100%;
     width: 1%;
     padding: 10px 20px;
+<<<<<<< HEAD
+=======
+    border-radius: 50px;
+>>>>>>> 3803946 (commit)
     margin-left: 50px;
     transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
@@ -76,9 +80,15 @@ nav ul li a:hover {
 .login-button:hover {
     color: #ff0000;
     font-weight: bold;
+<<<<<<< HEAD
     transform: scale(1.2);
 }
 
+=======
+    box-shadow: 6px 4px 9px #ffffffff;
+    transform: scale(1.2);
+}
+>>>>>>> 3803946 (commit)
 .current {
     color: #ff0000;
     font-weight: bold;

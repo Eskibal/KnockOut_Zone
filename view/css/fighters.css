@@ -63,6 +63,10 @@ nav ul li a:hover {
     max-width: 100%;
     width: 1%;
     padding: 10px 20px;
+<<<<<<< HEAD
+=======
+    border-radius: 50px;
+>>>>>>> 3803946 (commit)
     margin-left: 50px;
     transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
@@ -76,6 +80,10 @@ nav ul li a:hover {
 .login-button:hover {
     color: #ff0000;
     font-weight: bold;
+<<<<<<< HEAD
+=======
+    box-shadow: 6px 4px 9px #ffffffff;
+>>>>>>> 3803946 (commit)
     transform: scale(1.2);
 }
 
@@ -175,6 +183,39 @@ hr {
     font-style: italic;
 }
 
+<<<<<<< HEAD
+=======
+.extra {
+    background: linear-gradient(to bottom right, #000000, #333333);
+    border-radius: 10px;
+    border: 0px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+.extra tr h3 {
+    border-bottom: #ff0000 solid;
+}
+
+.extra tr {
+    text-align: center;
+    padding-inline: 10px;
+    margin: 0;
+}
+
+.extra p {
+    font-size: 18px;
+    margin-block: 10px;
+}
+
+.extra img {
+    width: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+>>>>>>> 3803946 (commit)
 .show {
     display: block;
     background: linear-gradient(to bottom right, #000000, #333333);
@@ -208,7 +249,11 @@ hr {
     border-radius: 10px;
     box-shadow: 0 8px 24px #00000066;
     padding: 20px;
+<<<<<<< HEAD
     padding-bottom: 120px;
+=======
+    padding-bottom: 260px;
+>>>>>>> 3803946 (commit)
     pointer-events: none;
     z-index: 1;
     transition: max-height 0.5s ease, top 0.5s ease, opacity 0.5s ease;
@@ -261,12 +306,19 @@ hr {
 }
 
 footer {
+<<<<<<< HEAD
     margin-top: 400px;
+=======
+>>>>>>> 3803946 (commit)
     display: grid;
     grid-template-columns: repeat(3, 20%);
     background: linear-gradient(to bottom right, #000000, #333333);
     color: #ffffff;
     padding: 20px;
+<<<<<<< HEAD
+=======
+    margin-top: 500px;
+>>>>>>> 3803946 (commit)
 }
 
 footer a {

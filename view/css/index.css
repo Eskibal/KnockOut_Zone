@@ -8,12 +8,20 @@ header {
 }
 
 nav {
+<<<<<<< HEAD
+=======
+    top: 0;
+>>>>>>> 3803946 (commit)
     position: fixed;
     display: flex;
     background: linear-gradient(to bottom right, #000000, #333333);
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
     padding: 10px 0;
+=======
+    padding: 20px 0;
+>>>>>>> 3803946 (commit)
     width: 100%;
     z-index: 1000;
 }
@@ -60,9 +68,24 @@ nav ul li a:hover {
 .login-button {
     color: #ffffff;
     font-size: 20px;
+<<<<<<< HEAD
     padding: 10px 20px;
     margin-left: 20px;
     transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+=======
+    max-width: 100%;
+    width: 1%;
+    padding: 10px 20px;
+    border-radius: 50px;
+    margin-left: 50px;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
+}
+
+.login-button img {
+    width: 20px;
+    height: 20px;
+    transform: scale(3);
+>>>>>>> 3803946 (commit)
 }
 
 .login-button:hover {
@@ -71,6 +94,7 @@ nav ul li a:hover {
     transform: scale(1.2);
 }
 
+<<<<<<< HEAD
 
 video {
     width: 100%;
@@ -80,6 +104,148 @@ video {
     object-fit: cover;
 }
 
+=======
+.banner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-top: 8%;
+}
+
+.banner hr {
+    margin-inline: 0;
+}
+
+.banner-text {
+    position: relative;
+    text-align: justify;
+    z-index: 2;
+    color: #fff;
+    width: 100%;
+    background: rgba(0,0,0,0.35);
+    padding: 40px 50px;
+    border-radius: 10px;
+    top: 400px;
+}
+
+video {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.banner-slide img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 50%;
+}
+
+.banner-text h3 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-family: "Bahnschrift Light";
+    color: red;
+}
+
+.banner-text h2 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.banner-slideshow {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000;
+}
+
+.banner-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    display: none;
+    opacity: 0;
+    z-index: 1;
+}
+
+.banner-slide.active {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+}
+
+.banner-slide.slide-in-left {
+    animation: slideInLeft 0.7s forwards;
+}
+
+.banner-slide.slide-in-right {
+    animation: slideInRight 0.7s forwards;
+}
+
+.banner-slide.slide-out-left {
+    animation: slideOutLeft 0.7s forwards;
+    z-index: 3;
+}
+
+.banner-slide.slide-out-right {
+    animation: slideOutRight 0.7s forwards;
+    z-index: 3;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%);}
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%);}
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideOutLeft {
+    from { opacity: 1; transform: translateX(0);}
+    to   { opacity: 0; transform: translateX(-100%);}
+}
+@keyframes slideOutRight {
+    from { opacity: 1; transform: translateX(0);}
+    to   { opacity: 0; transform: translateX(100%);}
+}
+
+.banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.banner-arrow.left { left: 20px; }
+.banner-arrow.right { right: 20px; }
+
+>>>>>>> 3803946 (commit)
 hr {
     max-width: 100%;
     width: 70%
@@ -89,7 +255,11 @@ hr {
     font-size: 60px;
     font-family: Bahnschrift SemiBold;
     text-align: center;
+<<<<<<< HEAD
     margin-top: 20px;
+=======
+    font-style: italic;
+>>>>>>> 3803946 (commit)
 }
 
 article {
@@ -155,7 +325,12 @@ section a span {
 }
 
 section a:hover span {
+<<<<<<< HEAD
     color: #666;;
+=======
+    color: #666;
+    ;
+>>>>>>> 3803946 (commit)
 }
 
 section a hr {
@@ -185,7 +360,12 @@ aside section span {
 footer {
     display: grid;
     grid-template-columns: repeat(3, 20%);
+<<<<<<< HEAD
     background: linear-gradient(to bottom right, #000000, #333333);;
+=======
+    background: linear-gradient(to bottom right, #000000, #333333);
+    ;
+>>>>>>> 3803946 (commit)
     color: #ffffff;
     padding: 20px;
 }
@@ -206,7 +386,11 @@ footer a:hover {
     body {
         font-size: 18px;
     }
+<<<<<<< HEAD
  
+=======
+
+>>>>>>> 3803946 (commit)
     nav {
         width: 100%;
     }
@@ -224,16 +408,40 @@ footer a:hover {
         position: relative;
     }
 
+<<<<<<< HEAD
+=======
+    .banner {
+        height: 200px;
+    }
+    .banner-text h2 {
+        font-size: 1.5rem;
+    }
+    .banner-text h3 {
+        font-size: 1rem;
+    }
+
+>>>>>>> 3803946 (commit)
     video {
         display: none;
     }
 
+<<<<<<< HEAD
     nav ul li a  {
         font-size: 20px;
     }
     nav ul li {
         margin: 0 5px;
     }
+=======
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+>>>>>>> 3803946 (commit)
     nav ul {
         flex-direction: column;
         gap: 5px;
@@ -242,20 +450,33 @@ footer a:hover {
     .login-button {
         font-size: 20px;
         padding: 5px 10px;
+<<<<<<< HEAD
         margin-left: 8%;        
+=======
+        margin-left: 8%;
+>>>>>>> 3803946 (commit)
     }
 
     article {
         padding: 50px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3803946 (commit)
     section {
         width: 100%;
         padding: 10px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3803946 (commit)
     section a img {
         width: 100%;
         height: auto;
     }
+<<<<<<< HEAD
     section a h3 {
         font-size: 12px;
     }
@@ -265,16 +486,39 @@ footer a:hover {
     section a span {
         font-size: 14px;
     }
+=======
+
+    section a h3 {
+        font-size: 12px;
+    }
+
+    section a h2 {
+        font-size: 16px;
+    }
+
+    section a span {
+        font-size: 14px;
+    }
+
+>>>>>>> 3803946 (commit)
     aside {
         width: 100%;
         padding: 10px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3803946 (commit)
     footer {
         grid-template-columns: repeat(1, 100%);
         padding: 10px;
         font-size: 18px;
         text-align: center;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3803946 (commit)
     footer a:hover {
         transform: scale(1.1);
         transition: transform 0.3s, color 0.3s, font-weight 0.3s;
@@ -290,12 +534,24 @@ footer a:hover {
     nav {
         width: 100%;
     }
+<<<<<<< HEAD
     nav ul li a  {
         font-size: 20px;
     }
     nav ul li {
         margin: 0 5px;
     }
+=======
+
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul li {
+        margin: 0 5px;
+    }
+
+>>>>>>> 3803946 (commit)
     nav ul {
         gap: 5px;
     }
@@ -303,20 +559,36 @@ footer a:hover {
     .login-button {
         font-size: 20px;
         padding: 5px 10px;
+<<<<<<< HEAD
         margin-left: 8%;        
+=======
+        margin-left: 8%;
+>>>>>>> 3803946 (commit)
     }
 
     article {
         padding: 10px;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 3803946 (commit)
     footer {
         grid-template-columns: repeat(1, 100%);
         padding: 40px;
         font-size: 18px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3803946 (commit)
     footer a:hover {
         transform: scale(1.1);
         transition: transform 0.3s, color 0.3s, font-weight 0.3s;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3803946 (commit)
