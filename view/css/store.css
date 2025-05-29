@@ -189,7 +189,7 @@ hr {
     text-align: center;
     display: flex;
     align-items: center;
-    transition: background 0.5s, transform 0.5s, padding 0.5s;
+    transition: background 0.5s, transform 0.3s, padding 0.3s;
     height: 40px;
 }
 
@@ -197,7 +197,7 @@ hr {
     opacity: 0;
     margin-inline: -5px;
     font-size: 0px;
-    transition: opacity 0.5s ease-in-out, font-size 0.5s ease-in-out;
+    transition: opacity 0.3s, font-size 0.3s;
 }
 
 .add-cart:hover {
@@ -256,6 +256,7 @@ footer {
     background: linear-gradient(to bottom right, #000000, #333333);;
     color: #ffffff;
     padding: 20px;
+    margin-top: 2%;
 }
 
 footer a {

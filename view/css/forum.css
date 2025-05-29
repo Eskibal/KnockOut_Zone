@@ -87,6 +87,7 @@ nav ul li a:hover {
     max-width: 100%;
     width: 1%;
     padding: 10px 20px;
+    border-radius: 50px;
     margin-left: 50px;
     transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
@@ -100,6 +101,7 @@ nav ul li a:hover {
 .login-button:hover {
     color: #ff0000;
     font-weight: bold;
+    box-shadow: 6px 4px 9px #ffffffff;
     transform: scale(1.2);
 }
 
@@ -221,4 +223,35 @@ footer a:hover {
     color: #ff0000;
     font-weight: bold;
     transform: scale(1.2);
+}
+
+.options-container {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 30px 10px 30px;
+    font-size: 18px;
+    z-index: 10;
+    background: #fff;
+    padding: 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 8px 8px #00000012;
+}
+
+.post {
+    font-family: 'Bahnschrift';
+    font-style: italic;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(to bottom right, #000000, #333333);
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.5s, transform 0.4s ease;
+}
+
+.post:hover {
+    background: linear-gradient(to right bottom, #d80000, #000000);
+    transform: scale(1.1);
 }

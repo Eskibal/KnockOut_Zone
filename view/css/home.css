@@ -8,12 +8,13 @@ header {
 }
 
 nav {
+    top: 0;
     position: fixed;
     display: flex;
     background: linear-gradient(to bottom right, #000000, #333333);
     align-items: center;
     justify-content: center;
-    padding: 10px 0;
+    padding: 20px 0;
     width: 100%;
     z-index: 1000;
 }
@@ -63,8 +64,9 @@ nav ul li a:hover {
     max-width: 100%;
     width: 1%;
     padding: 10px 20px;
+    border-radius: 50px;
     margin-left: 50px;
-    transition: transform 0.3s, color 0.3s, font-weight 0.3s;
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
 
 .login-button img {
@@ -76,17 +78,149 @@ nav ul li a:hover {
 .login-button:hover {
     color: #ff0000;
     font-weight: bold;
+    box-shadow: 6px 4px 9px #ffffffff;
     transform: scale(1.2);
 }
 
+.banner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 30px;
+    margin-top: 8%;
+}
+
+.banner hr {
+    margin-inline: 0;
+}
+
+.banner-text {
+    position: relative;
+    text-align: justify;
+    z-index: 2;
+    color: #fff;
+    width: 100%;
+    background: rgba(0,0,0,0.35);
+    padding: 40px 50px;
+    border-radius: 10px;
+    top: 400px;
+}
 
 video {
+    position: absolute;
+    top: 0; left: 0;
     width: 100%;
-    height: auto;
-    margin-top: 8%;
-    max-height: 100vh;
+    height: 100%;
     object-fit: cover;
+    z-index: 1;
 }
+
+.banner-slide img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    opacity: 50%;
+}
+
+.banner-text h3 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    font-style: italic;
+    font-family: "Bahnschrift Light";
+    color: red;
+}
+
+.banner-text h2 {
+    font-size: 3rem;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.banner-slideshow {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000;
+}
+
+.banner-slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0; left: 0;
+    display: none;
+    opacity: 0;
+    z-index: 1;
+}
+
+.banner-slide.active {
+    display: block;
+    opacity: 1;
+    z-index: 2;
+}
+
+.banner-slide.slide-in-left {
+    animation: slideInLeft 0.7s forwards;
+}
+
+.banner-slide.slide-in-right {
+    animation: slideInRight 0.7s forwards;
+}
+
+.banner-slide.slide-out-left {
+    animation: slideOutLeft 0.7s forwards;
+    z-index: 3;
+}
+
+.banner-slide.slide-out-right {
+    animation: slideOutRight 0.7s forwards;
+    z-index: 3;
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%);}
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100%);}
+    to   { opacity: 1; transform: translateX(0);}
+}
+@keyframes slideOutLeft {
+    from { opacity: 1; transform: translateX(0);}
+    to   { opacity: 0; transform: translateX(-100%);}
+}
+@keyframes slideOutRight {
+    from { opacity: 1; transform: translateX(0);}
+    to   { opacity: 0; transform: translateX(100%);}
+}
+
+.banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    background: rgba(0,0,0,0.3);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    user-select: none;
+}
+
+.banner-arrow.left { left: 20px; }
+.banner-arrow.right { right: 20px; }
 
 hr {
     max-width: 100%;
@@ -97,7 +231,7 @@ hr {
     font-size: 60px;
     font-family: Bahnschrift SemiBold;
     text-align: center;
-    margin-top: 20px;
+    font-style: italic;
 }
 
 article {
@@ -163,7 +297,8 @@ section a span {
 }
 
 section a:hover span {
-    color: #666;;
+    color: #666;
+    ;
 }
 
 section a hr {
@@ -193,7 +328,8 @@ aside section span {
 footer {
     display: grid;
     grid-template-columns: repeat(3, 20%);
-    background: linear-gradient(to bottom right, #000000, #333333);;
+    background: linear-gradient(to bottom right, #000000, #333333);
+    ;
     color: #ffffff;
     padding: 20px;
 }
@@ -214,7 +350,6 @@ footer a:hover {
     body {
         font-size: 18px;
     }
- 
     nav {
         width: 100%;
     }
@@ -232,16 +367,28 @@ footer a:hover {
         position: relative;
     }
 
+    .banner {
+        height: 200px;
+    }
+    .banner-text h2 {
+        font-size: 1.5rem;
+    }
+    .banner-text h3 {
+        font-size: 1rem;
+    }
+
     video {
         display: none;
     }
 
-    nav ul li a  {
+    nav ul li a {
         font-size: 20px;
     }
+
     nav ul li {
         margin: 0 5px;
     }
+
     nav ul {
         flex-direction: column;
         gap: 5px;
@@ -250,7 +397,7 @@ footer a:hover {
     .login-button {
         font-size: 20px;
         padding: 5px 10px;
-        margin-left: 8%;        
+        margin-left: 8%;
     }
 
     article {
@@ -264,15 +411,19 @@ footer a:hover {
         width: 100%;
         height: auto;
     }
+
     section a h3 {
         font-size: 12px;
     }
+
     section a h2 {
         font-size: 16px;
     }
+
     section a span {
         font-size: 14px;
     }
+
     aside {
         width: 100%;
         padding: 10px;
@@ -298,12 +449,15 @@ footer a:hover {
     nav {
         width: 100%;
     }
-    nav ul li a  {
+
+    nav ul li a {
         font-size: 20px;
     }
+
     nav ul li {
         margin: 0 5px;
     }
+
     nav ul {
         gap: 5px;
     }
@@ -311,13 +465,12 @@ footer a:hover {
     .login-button {
         font-size: 20px;
         padding: 5px 10px;
-        margin-left: 8%;        
+        margin-left: 8%;
     }
 
     article {
         padding: 10px;
     }
-    
     footer {
         grid-template-columns: repeat(1, 100%);
         padding: 40px;
