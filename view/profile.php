@@ -40,7 +40,7 @@ if (isset($_SESSION["success"])) {
             <ul class="nav-list">
                 <li><a href="store.html">STORE</a></li>
                 <li><a href="forum.html">FORUM</a></li>
-                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="events.php">EVENTS</a></li>
                 <li><a href="fighters.html">FIGHTERS</a></li>
             </ul>
             <a href="../controller/logout.php" class="btn">LOG OUT</a>
